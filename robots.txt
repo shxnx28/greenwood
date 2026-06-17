@@ -1,0 +1,84 @@
+# ==============================================================
+# robots.txt — Greenwood Philippines
+# https://greenwoodphilippines.com
+# Last updated: 2026-04-24
+# ==============================================================
+
+# ── GOOGLE ────────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /catalog.php
+Allow: /product-detail.php
+Allow: /projects.php
+Allow: /view_album.php
+Allow: /room-simulator.php
+Disallow: /admin/
+Disallow: /login.php
+Disallow: /db.php
+# No Crawl-delay for Googlebot — Google ignores it; removing it improves crawl budget
+
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Allow: /admin/uploads/
+Disallow: /admin/
+
+# ── BING ──────────────────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Disallow: /admin/
+Disallow: /login.php
+Disallow: /db.php
+Crawl-delay: 3
+
+# ── ALL OTHER LEGITIMATE CRAWLERS ─────────────────────────────
+User-agent: *
+Allow: /
+Allow: /index.php
+Allow: /catalog.php
+Allow: /product-detail.php
+Allow: /projects.php
+Allow: /view_album.php
+Allow: /room-simulator.php
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Disallow: /admin/
+Disallow: /admin/uploads/
+Disallow: /login.php
+Disallow: /db.php
+Disallow: /*.sql
+Disallow: /*.log
+Disallow: /*.env
+Disallow: /*.bak
+Disallow: /*?debug=
+Disallow: /*?test=
+Disallow: /*?PHPSESSID=
+Crawl-delay: 5
+
+# ── BLOCK KNOWN AGGRESSIVE / BAD BOTS ────────────────────────
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+# ── SITEMAPS ─────────────────────────────────────────────────
+Sitemap: https://greenwoodphilippines.com/sitemap.php

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- ── STATIC PAGES ──────────────────────────────────────── -->
+
+    <url>
+        <loc>https://greenwoodphilippines.com/</loc>
+        <lastmod>2026-06-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://greenwoodphilippines.com/catalog.php</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://greenwoodphilippines.com/catalog.php?category=wall</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <url>
+        <loc>https://greenwoodphilippines.com/catalog.php?category=floor</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <url>
+        <loc>https://greenwoodphilippines.com/catalog.php?category=ceiling</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <url>
+        <loc>https://greenwoodphilippines.com/catalog.php?category=fence</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <url>
+        <loc>https://greenwoodphilippines.com/projects.php</loc>
+        <lastmod>2026-04-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://greenwoodphilippines.com/room-simulator.php</loc>
+        <lastmod>2026-06-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+
+    <!-- ── PRODUCT PAGES ─────────────────────────────────────── -->
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=1</loc>
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dee794e4f229.36744626.png</image:loc>
+            <image:title>Half-Privacy Fence – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=2</loc>
+        <lastmod>2026-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dedde127eeb3.66228280.png</image:loc>
+            <image:title>PVC TU Ceiling – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=3</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69deddd5b41506.95734601.png</image:loc>
+            <image:title>SPC Flooring – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=4</loc>
+        <lastmod>2026-02-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69deddcbcaff89.80055916.png</image:loc>
+            <image:title>Solid Planks – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=5</loc>
+        <lastmod>2026-02-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69deddc3062083.73193496.png</image:loc>
+            <image:title>PU Mushroom – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=6</loc>
+        <lastmod>2026-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69deddb7311379.35009907.png</image:loc>
+            <image:title>PVC VG Ceiling – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=7</loc>
+        <lastmod>2026-02-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69deddaa02e999.44038775.png</image:loc>
+            <image:title>WPC Indoor Fluted – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=8</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dedd9eaf5a55.78452536.png</image:loc>
+            <image:title>WPC Outdoor Fluted – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=9</loc>
+        <lastmod>2026-02-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dedd93d6a3e8.00625036.png</image:loc>
+            <image:title>PU Rock Stone – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=10</loc>
+        <lastmod>2026-02-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dedd85e916b8.33437665.png</image:loc>
+            <image:title>PU Stone Panel – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=11</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dedd562a2358.44970359.png</image:loc>
+            <image:title>WPC Siding – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=12</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dedd4c184886.78166113.png</image:loc>
+            <image:title>PVC Half-Round – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=13</loc>
+        <lastmod>2026-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dedd40a63606.81028417.png</image:loc>
+            <image:title>SPC Fishbone Flooring – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=14</loc>
+        <lastmod>2026-02-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dee3d5dea2f0.43770251.png</image:loc>
+            <image:title>DIY Deck – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=15</loc>
+        <lastmod>2026-02-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dedd23045e41.82722899.png</image:loc>
+            <image:title>WPC Decking – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=16</loc>
+        <lastmod>2026-02-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dee3c8503337.93137149.png</image:loc>
+            <image:title>WPC 3IN1 Fluted – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=17</loc>
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dedce5e92d57.67762891.png</image:loc>
+            <image:title>Bamboo Charcoal – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=18</loc>
+        <lastmod>2026-04-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dedccdcd3155.46378115.png</image:loc>
+            <image:title>UV board – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=20</loc>
+        <lastmod>2026-04-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dedca81a5854.70980857.png</image:loc>
+            <image:title>Soft Stone – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=21</loc>
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dee305e80092.34717668.png</image:loc>
+            <image:title>Acoustic Fluted Panel – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=22</loc>
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dee7bbac4ce6.67755675.png</image:loc>
+            <image:title>Privacy Fence – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=23</loc>
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69dee7e38a87a0.26216564.png</image:loc>
+            <image:title>Solar Fence – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=24</loc>
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69deeb0d9769c6.78500184.png</image:loc>
+            <image:title>Soft Stone Bricks – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=25</loc>
+        <lastmod>2026-04-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69deeb8f198d68.72946249.png</image:loc>
+            <image:title>Honeycomb Acoustic Fluted Panel – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=26</loc>
+        <lastmod>2026-04-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69deec10136714.29788283.png</image:loc>
+            <image:title>WPC Column Indoor – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=27</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_69deec4a128c95.78917792.png</image:loc>
+            <image:title>WPC Column Outdoor – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/product-detail.php?id=28</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/admin/uploads/parent-image/parent_6a1ce81d1497d6.33396498.webp</image:loc>
+            <image:title>No More Nails – Greenwood Philippines</image:title>
+        </image:image>
+    </url>
+
+    <!-- ── PROJECT ALBUM PAGES ───────────────────────────────── -->
+    <url>
+        <loc>https://greenwoodphilippines.com/view_album.php?album=De+Castro</loc>
+        <lastmod>2026-04-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/uploads/projects/project_69d9a5d8a54d18.81821310.jpg</image:loc>
+            <image:title>De Castro House – Greenwood Philippines Project</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/view_album.php?album=Rejoy%27s+Living+Room</loc>
+        <lastmod>2026-02-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/uploads/projects/project_698ed68a337d71.82329709.jpg</image:loc>
+            <image:title>Rejoy&#039;s Living Room – Greenwood Philippines Project</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/view_album.php?album=Outdoor1</loc>
+        <lastmod>2026-02-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/uploads/projects/project_698e9c20191165.67684745.jpg</image:loc>
+            <image:title>Project5 – Greenwood Philippines Project</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/view_album.php?album=La+Casa+Rosa</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/uploads/projects/project_698ac7292aa400.47263085.jpg</image:loc>
+            <image:title>La Casa Rosa – Greenwood Philippines Project</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/view_album.php?album=project4</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/assets/images/nobg.webp</image:loc>
+            <image:title>Project4 – Greenwood Philippines Project</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/view_album.php?album=project3</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/uploads/projects/project_698bd5228c6803.60239425.jpg</image:loc>
+            <image:title>Project3 – Greenwood Philippines Project</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/view_album.php?album=project2</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/uploads/projects/project_698bd35d3973b4.13121111.jpg</image:loc>
+            <image:title>Project2 – Greenwood Philippines Project</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://greenwoodphilippines.com/view_album.php?album=project1</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+        <image:image>
+            <image:loc>https://greenwoodphilippines.com/uploads/projects/project_698bd2a2b0a023.48490321.jpg</image:loc>
+            <image:title>Project1 – Greenwood Philippines Project</image:title>
+        </image:image>
+    </url>
+
+</urlset>

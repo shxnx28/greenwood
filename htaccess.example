@@ -1,0 +1,91 @@
+# ==============================================================
+# .htaccess — Greenwood Philippines
+# Performance + Security + SEO + Canonical URL fixes
+# ==============================================================
+
+# === DATABASE CREDENTIALS ===
+# Copy this file to .htaccess and fill in your real values.
+# NEVER commit .htaccess to Git — it's listed in .gitignore.
+SetEnv DB_HOST localhost
+SetEnv DB_USER your_db_user
+SetEnv DB_PASS your_db_password_here
+SetEnv DB_NAME your_db_name
+
+RewriteEngine On
+
+# ── FORCE HTTPS ────────────────────────────────────────────────
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ── FORCE WWW-LESS (canonical domain) ─────────────────────────
+RewriteCond %{HTTP_HOST} ^www\.greenwoodphilippines\.com [NC]
+RewriteRule ^ https://greenwoodphilippines.com%{REQUEST_URI} [L,R=301]
+
+# ── CANONICAL URL FIX: redirect clean URLs to query string ─────
+# Prevents duplicate content: catalog/wall → catalog.php?category=wall
+RewriteRule ^catalog/([a-z0-9-]+)/?$ /catalog.php?category=$1 [L,R=301,QSA]
+
+# ── GZIP COMPRESSION ───────────────────────────────────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE font/woff2
+    AddOutputFilterByType DEFLATE font/woff
+</IfModule>
+
+# ── BROWSER CACHING ────────────────────────────────────────────
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/webp          "access plus 1 year"
+    ExpiresByType image/jpeg          "access plus 1 year"
+    ExpiresByType image/jpg           "access plus 1 year"
+    ExpiresByType image/png           "access plus 1 year"
+    ExpiresByType image/gif           "access plus 1 year"
+    ExpiresByType image/svg+xml       "access plus 1 year"
+    ExpiresByType image/x-icon        "access plus 1 year"
+    ExpiresByType font/woff2          "access plus 1 year"
+    ExpiresByType font/woff           "access plus 1 year"
+    ExpiresByType font/ttf            "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType text/css            "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript     "access plus 1 month"
+    ExpiresByType text/html           "access plus 0 seconds"
+</IfModule>
+
+# ── CACHE-CONTROL HEADERS ──────────────────────────────────────
+<IfModule mod_headers.c>
+    <FilesMatch "\.(webp|jpg|jpeg|png|gif|svg|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(woff2|woff|ttf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-Permitted-Cross-Domain-Policies "none"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    Header set Connection keep-alive
+</IfModule>
+
+# ── BLOCK SENSITIVE FILES ──────────────────────────────────────
+<FilesMatch "\.(sql|log|env|bak|sh|git)$">
+    Require all denied
+</FilesMatch>
+
+# ── BLOCK PHP EXECUTION IN UPLOADS ────────────────────────────
+<DirectoryMatch "admin/uploads">
+    <FilesMatch "\.php[0-9]?$">
+        Require all denied
+    </FilesMatch>
+</DirectoryMatch>
