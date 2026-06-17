@@ -1,0 +1,32 @@
+# ==============================================================
+# .gitignore — Greenwood Philippines
+# Keeps secrets and local-only files out of version control.
+# ==============================================================
+
+# --- Secrets / server config ---
+# The real .htaccess holds live DB credentials (see htaccess.example).
+# Never commit it — copy htaccess.example to .htaccess and fill in values.
+.htaccess
+*.env
+.env
+
+# --- Database dumps & backups ---
+*.sql
+*.bak
+
+# --- Logs ---
+*.log
+
+# --- User-uploaded content (runtime, not source) ---
+admin/uploads/
+
+# --- OS cruft ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Editor / IDE ---
+.vscode/
+.idea/
+*.swp
+*~
