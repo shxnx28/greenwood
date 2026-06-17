@@ -1,0 +1,247 @@
+*, body, input, select, textarea, button {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --green-primary:  #648E37;
+    --green-hover:    #527230;
+    --green-dark:     #303823;
+    --green-mid:      #504d2c;
+    --green-light:    #eef4e6;
+    --green-accent:   #8fba52;
+    --border-light:   #e4e8df;
+}
+
+/* ===============================
+   INFLUENCER GRID
+   =============================== */
+.influencer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* ===============================
+   INFLUENCER CARD
+   =============================== */
+.influencer-card {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+
+.influencer-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(100,142,55,0.18);
+    border-color: var(--green-primary);
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===============================
+   IMAGE WRAPPER
+   =============================== */
+.inf-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: #f0f0f0;
+    flex-shrink: 0;
+}
+
+.inf-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.influencer-card:hover .inf-image {
+    transform: scale(1.05);
+}
+
+.inf-image-wrapper.placeholder-image {
+    background: linear-gradient(135deg, var(--green-light) 0%, #d0e8c8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inf-image-wrapper.placeholder-image::after {
+    content: '📷';
+    font-size: 3rem;
+    opacity: 0.4;
+}
+
+/* ===============================
+   HOVER OVERLAY  — matches projects
+   =============================== */
+.inf-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+}
+
+.influencer-card:hover .inf-hover-overlay {
+    opacity: 1;
+}
+
+.inf-hover-text {
+    color: #2d2d2d;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* ===============================
+   PLATFORM BADGE
+   =============================== */
+.inf-platform-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(100, 142, 55, 0.95);
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    backdrop-filter: blur(10px);
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(100,142,55,0.3);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.inf-platform-badge.facebook  { background: rgba(24, 119, 242, 0.95); }
+.inf-platform-badge.instagram { background: rgba(193, 53, 132, 0.95); }
+.inf-platform-badge.tiktok    { background: rgba(0, 0, 0, 0.85); }
+.inf-platform-badge.youtube   { background: rgba(255, 0, 0, 0.90); }
+.inf-platform-badge.twitter,
+.inf-platform-badge.x         { background: rgba(0, 0, 0, 0.85); }
+
+/* ===============================
+   INFO SECTION
+   =============================== */
+.inf-info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    flex: 1;
+}
+
+.inf-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--green-primary);
+    margin: 0 0 6px 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.inf-description {
+    font-size: 0.85rem;
+    color: #8B7355;
+    font-weight: 500;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0 0 10px 0;
+}
+
+.inf-watch-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--green-primary);
+    margin-top: auto;
+}
+
+.inf-watch-link i {
+    font-size: 1rem;
+}
+
+/* ===============================
+   ANIMATIONS
+   =============================== */
+@keyframes infFadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.inf-item { animation: infFadeUp 0.45s ease-out both; }
+.inf-item:nth-child(1) { animation-delay: 0.00s; }
+.inf-item:nth-child(2) { animation-delay: 0.07s; }
+.inf-item:nth-child(3) { animation-delay: 0.14s; }
+.inf-item:nth-child(4) { animation-delay: 0.21s; }
+.inf-item:nth-child(5) { animation-delay: 0.28s; }
+.inf-item:nth-child(6) { animation-delay: 0.35s; }
+.inf-item:nth-child(n+7) { animation-delay: 0.40s; }
+
+/* ===============================
+   CTA SECTION
+   =============================== */
+.cta-section {
+    background: linear-gradient(140deg, var(--green-dark) 0%, var(--green-mid) 100%);
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 768px) {
+    .influencer-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 16px;
+    }
+
+    .inf-image-wrapper { height: 240px; }
+    .inf-info { padding: 14px; }
+    .inf-name { font-size: 0.95rem; }
+    .inf-description { font-size: 0.8rem; }
+}
+
+@media (min-width: 1200px) {
+    .inf-image-wrapper { height: 300px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .inf-item { animation: none !important; }
+}
