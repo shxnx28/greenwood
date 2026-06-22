@@ -100,7 +100,6 @@ if (!$albumExists) {
 
     <!-- Primary SEO Meta Tags -->
     <meta name="description" content="<?php echo $seoAlbumDesc; ?>">
-    <meta name="keywords" content="<?php echo $seoAlbumTitle; ?>, Greenwood Philippines projects, installation gallery, wall panels, flooring, ceiling Philippines">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Greenwood Philippines">
     <link rel="canonical" href="<?php echo $seoAlbumUrl; ?>">

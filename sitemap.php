@@ -106,6 +106,20 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
         <priority>0.70</priority>
     </url>
 
+    <url>
+        <loc><?php echo $base; ?>/influencers.php</loc>
+        <lastmod><?php echo $today; ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.70</priority>
+    </url>
+
+    <url>
+        <loc><?php echo $base; ?>/faq.php</loc>
+        <lastmod><?php echo $today; ?></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.60</priority>
+    </url>
+
     <!-- ── PRODUCT PAGES ─────────────────────────────────────── -->
 <?php
 // Join product_variant so any variant edit also bumps the product page lastmod

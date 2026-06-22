@@ -20,7 +20,6 @@
 
     <!-- Primary SEO Meta Tags -->
     <meta name="description" content="Browse real installation projects by Greenwood Philippines. See how our wall panels, flooring, ceiling systems, and fence materials transform Filipino homes and commercial spaces.">
-    <meta name="keywords" content="Greenwood Philippines projects, wall panel installation Philippines, flooring installation, ceiling installation, home renovation Philippines, building materials projects">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Greenwood Philippines">
     <link rel="canonical" href="https://greenwoodphilippines.com/projects.php">

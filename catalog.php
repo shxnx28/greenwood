@@ -155,7 +155,6 @@ foreach ($products_grouped as $pid => $p) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products Catalog | Wall, Floor & Ceiling Materials – Greenwood Philippines</title>
     <meta name="description" content="Browse Greenwood Philippines' full catalog of premium wall panels, flooring, ceiling systems, and fence solutions. Filter by category, compare prices, and calculate area coverage.">
-    <meta name="keywords" content="Greenwood Philippines products, wall panels Philippines, floor materials, ceiling systems, fence solutions, building materials catalog">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Greenwood Philippines">
     <?php
@@ -724,7 +723,7 @@ foreach ($products_grouped as $pid => $p) {
 
             <!-- No Results -->
             <div id="noResults" class="text-center py-5" style="display:none;">
-                <img loading="lazy" decoding="async" src="assets/images/nobg.webp" height="60" class="mb-3 opacity-50">
+                <img loading="lazy" decoding="async" src="assets/images/nobg.webp" height="60" class="mb-3 opacity-50" alt="">
                 <h3 class="text-muted">No products found</h3>
                 <p class="text-muted">Try adjusting your filters or search terms</p>
             </div>
