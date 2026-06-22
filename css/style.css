@@ -275,11 +275,13 @@ html.modal-open { padding-right: 0 !important; overflow-x: hidden; }
 .hero-bg-image {
     position: absolute;
     inset: 0;
-    background-image: url('/assets/images/sample.webp');
+    background-image: url('/assets/images/livingroom.webp');
     background-size: cover;
     background-position: center right;
     background-repeat: no-repeat;
     z-index: 1;
+    /* Room switcher slides horizontally between rooms (JS toggles transform) */
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
 }
 
 /* White fade left → fully transparent right — less aggressive */
@@ -1910,7 +1912,9 @@ html.modal-open { padding-right: 0 !important; overflow-x: hidden; }
     #gw-toast-container { top: 16px; right: 16px; left: 16px; width: auto; max-width: none; }
     /* Tablet & mobile hero — full bleed image, no card */
     .hero-section   { padding: 0; min-height: 100svh; align-items: flex-end; }
-    .hero-bg-image  { background-position: center center; background-size: cover; }
+    /* Right-sized mobile LCP image (full-res original stays for desktop). Only this URL is
+       fetched at <=991px since it wins the cascade; the dark overlay hides the lower res. */
+    .hero-bg-image  { background-image: url('/assets/images/livingroom-m.webp'); background-position: center center; background-size: cover; }
     .hero-overlay   {
         background: linear-gradient(
             to top,
