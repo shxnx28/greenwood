@@ -61,6 +61,16 @@ if (!$product) {
     product_not_found();
 }
 
+// ── Clean-URL canonicalization ──
+// The canonical product URL is /product/<id>/<slug>. 301 any other form
+// (legacy ?id=, or a missing/stale slug) to it before emitting any HTML.
+$gwCleanPath = gw_product_url($product_id, $product['product_name']);
+$gwReqPath   = strtok($_SERVER['REQUEST_URI'] ?? '', '?');
+if ($gwReqPath !== $gwCleanPath) {
+    header('Location: ' . $gwCleanPath, true, 301);
+    exit;
+}
+
 // Helper function to ensure proper hex code format
 function formatHexCode($hex) {
     if (empty($hex)) {
@@ -179,7 +189,7 @@ foreach ($variants as $variant) {
     $seoImage       = !empty($product['image_path'])
         ? 'https://greenwoodphilippines.com/' . ltrim($product['image_path'], '/')
         : 'https://greenwoodphilippines.com/assets/images/nobg.webp';
-    $canonicalUrl   = 'https://greenwoodphilippines.com/product-detail.php?id=' . intval($product_id);
+    $canonicalUrl   = 'https://greenwoodphilippines.com' . $gwCleanPath;
     ?>
 
     <title><?php echo $seoProductName; ?> – <?php echo $seoCategory ?: 'Greenwood Philippines'; ?> | Greenwood Philippines</title>
@@ -253,7 +263,7 @@ foreach ($variants as $variant) {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://greenwoodphilippines.com/" },
 <?php if (!empty($product['category_name'])): ?>
-        { "@type": "ListItem", "position": 2, "name": "<?php echo $seoCategory; ?>", "item": "https://greenwoodphilippines.com/catalog.php?category=<?php echo urlencode(strtolower($product['category_name'])); ?>" },
+        { "@type": "ListItem", "position": 2, "name": "<?php echo $seoCategory; ?>", "item": "https://greenwoodphilippines.com<?php echo gw_category_url($product['category_name']); ?>" },
         { "@type": "ListItem", "position": 3, "name": "<?php echo $seoProductName; ?>", "item": "<?php echo $canonicalUrl; ?>" }
 <?php else: ?>
         { "@type": "ListItem", "position": 2, "name": "<?php echo $seoProductName; ?>", "item": "<?php echo $canonicalUrl; ?>" }

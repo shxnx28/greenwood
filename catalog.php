@@ -161,7 +161,7 @@ foreach ($products_grouped as $pid => $p) {
     $canon_category = isset($_GET['category']) ? trim($_GET['category']) : '';
     $canonical_url = 'https://greenwoodphilippines.com/catalog.php';
     if ($canon_category !== '') {
-        $canonical_url .= '?category=' . urlencode($canon_category);
+        $canonical_url = 'https://greenwoodphilippines.com' . gw_category_url($canon_category);
     }
     ?>
     <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>">
@@ -644,6 +644,10 @@ foreach ($products_grouped as $pid => $p) {
             </div>
 
             <!-- Products Grid -->
+            <!-- No-JS fallback: reveal the server-rendered grid + hide the loading spinner -->
+            <noscript>
+                <style>#productsGrid{opacity:1 !important;} #productsLoadingOverlay{display:none !important;}</style>
+            </noscript>
             <div class="products-loading" style="position: relative;">
                 <div class="products-loading-overlay" id="productsLoadingOverlay">
                     <img loading="lazy" decoding="async" src="assets/images/nobg.webp" alt="Greenwood Logo" class="loading-logo">
@@ -666,7 +670,7 @@ foreach ($products_grouped as $pid => $p) {
                              data-category="<?php echo strtolower(htmlspecialchars($product['category_name'] ?? '')); ?>"
                              data-type="<?php echo strtolower(htmlspecialchars($product['product_type_name'] ?? '')); ?>">
 
-                            <a href="product-detail.php?id=<?php echo $product['product_id']; ?>" class="product-catalog-card-link">
+                            <a href="<?php echo gw_product_url($product['product_id'], $product['product_name']); ?>" class="product-catalog-card-link">
                                 <div class="product-catalog-card h-100">
 
                                     <div class="product-hover-overlay">
@@ -1295,7 +1299,8 @@ document.getElementById('rCostRec').className      = recCostClass;
     document.getElementById('sortFilter').addEventListener('change', function(){ filterProducts(); updateFilterActiveDot(); });
 
     document.addEventListener('DOMContentLoaded', function () {
-        var cat = new URLSearchParams(window.location.search).get('category');
+        var cat = <?php echo json_encode($canon_category !== '' ? $canon_category : ''); ?>;
+        if (!cat) { cat = new URLSearchParams(window.location.search).get('category') || ''; }
         if (cat) { document.getElementById('categoryFilter').value = cat.toLowerCase(); filterProducts(); }
     });
 
