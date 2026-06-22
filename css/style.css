@@ -1129,7 +1129,10 @@ html.modal-open { padding-right: 0 !important; overflow-x: hidden; }
     z-index: 0;
     will-change: transform;
 }
-@media (max-width: 767px) {
+/* The parallax wood-plank decoration is positioned for the wide two-column
+   desktop layout. Below 992px the Visit-Us columns stack, so the image would
+   land on top of the operating-hours text — hide it for tablet & mobile. */
+@media (max-width: 991px) {
     .visit-us-bg-image {
         display: none;
     }
@@ -1812,8 +1815,7 @@ html.modal-open { padding-right: 0 !important; overflow-x: hidden; }
         );
     }
     #products, #projects, #influencers { padding: 40px 0 36px; }
-    #products .product-grid { grid-template-columns: 1fr; gap: 16px; }
-    .product-image   { height: 210px; }
+    #products .product-grid { gap: 16px; }
     .product-content { padding: 18px; }
 
     .location-card { border-radius: 10px; }
@@ -1869,10 +1871,32 @@ html.modal-open { padding-right: 0 !important; overflow-x: hidden; }
     .scroll-to-top { bottom: 20px; right: 20px; width: 44px; height: 44px; }
 }
 
+/* ── TABLET (768–991px): fill the gap between phone & desktop layouts ──
+   Carousels show 2 cards per slide (JS rebuilds to match), and the About
+   cards switch to a 2-up grid so the wide tablet space isn't wasted. ── */
+@media (min-width: 768px) and (max-width: 991px) {
+    #projects .carousel-item .col-md-4,
+    #influencers .carousel-item .col-md-4 {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        width: 50% !important;
+        padding: 0 8px;
+    }
+    #projects .carousel-item .row,
+    #influencers .carousel-item .row {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        margin: 0;
+    }
+    #about .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        width: 50%;
+    }
+}
+
 @media (max-width: 991px) {
     #gw-toast-container { top: 16px; right: 16px; left: 16px; width: auto; max-width: none; }
-    #products .product-grid { grid-template-columns: 1fr; }
-    .product-image  { height: 180px; }
     /* Align navbar logo with hero text left edge (20px) */
     .navbar > .container { padding-left: 20px !important; padding-right: 20px !important; justify-content: flex-start !important; margin-left: 0 !important; margin-right: 0 !important; max-width: 100% !important; }
     .navbar > .container .navbar-toggler { margin-left: auto; }
@@ -2065,6 +2089,8 @@ main { display: block; }
 
 /* Mobile (max 576px) extras */
 @media (max-width: 576px) {
+    /* Products: single column on phones (2-up persists on tablets/large phones) */
+    #products .product-grid { grid-template-columns: 1fr; }
     /* Section headings */
     #projects h2, #influencers h2, #products h2, #locations h2 {
         font-size: 1.8rem !important;
