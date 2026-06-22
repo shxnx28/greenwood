@@ -27,8 +27,7 @@ if ($_r) $_upcoming_count = (int)$_r->fetch_assoc()['c'];
 <head>
     <meta charset="UTF-8">
     <!-- Resource Hints for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Inter is self-hosted (same-origin), so no Google Fonts preconnects are needed -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <!-- Preload critical above-fold assets -->
     <link rel="preload" href="/assets/images/nobg.webp" as="image" fetchpriority="high">
@@ -88,8 +87,18 @@ if ($_r) $_upcoming_count = (int)$_r->fetch_assoc()['c'];
     }
     </script>
 
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+    <!-- Inter self-hosted as a same-origin variable font (replaces the googleapis + gstatic -->
+    <!-- requests). Preloaded so the hero heading paints in the real typeface quickly.        -->
+    <link rel="preload" href="/assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+    @font-face{
+        font-family:'Inter';
+        font-style:normal;
+        font-weight:100 900;
+        font-display:swap;
+        src:url('/assets/fonts/inter-variable.woff2') format('woff2');
+    }
+    </style>
     <!-- Critical CSS — Bootstrap 5.3 grid/reboot/component stubs for above-fold classes  -->
     <!-- inlined so the hero renders identically on first paint (no FOUC / layout shift)  -->
     <style>
