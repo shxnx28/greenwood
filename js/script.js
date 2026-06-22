@@ -180,14 +180,22 @@ if (!('loading' in HTMLImageElement.prototype) && 'IntersectionObserver' in wind
     });
 })();
 
-// ── CAROUSEL: MOBILE 1-PER-SLIDE + COUNTER NAV + HEIGHT LOCK + DOT SCROLL
-// On mobile (< 768px):
-//   - Re-chunks carousel to 1-card-per-slide
-//   - Replaces dot indicators with a "2 / 10" counter + progress bar
-// On desktop: 3-per-slide with standard dot indicators.
+// ── CAROUSEL: RESPONSIVE PER-SLIDE + COUNTER NAV + HEIGHT LOCK + DOT SCROLL
+// Re-chunks the carousel cards to match the viewport:
+//   - Phones   (< 768px): 1 card per slide
+//   - Tablets   (768–991px): 2 cards per slide
+//   - Desktop  (>= 992px): 3 cards per slide
+// On mobile it also swaps dot indicators for a "2 / 10" counter + progress bar.
 (function() {
 
-    var MOBILE_BP = 768;
+    // Cards per slide by viewport: 1 on phones, 2 on tablets, 3 on desktop.
+    // Mirrors the CSS breakpoints so the rebuilt rows match the column widths.
+    function getPerSlide() {
+        var w = window.innerWidth;
+        if (w < 768) return 1;
+        if (w < 992) return 2;
+        return 3;
+    }
 
     // ── INJECT COUNTER into .carousel-nav-below (once per carousel) ──
     function injectCounter(carouselEl) {
@@ -365,9 +373,8 @@ if (!('loading' in HTMLImageElement.prototype) && 'IntersectionObserver' in wind
     // ── APPLY LAYOUT ──────────────────────────────────────────────
     function applyLayout(carouselEl) {
         if (!carouselEl) return;
-        var isMobile = window.innerWidth < MOBILE_BP;
         injectCounter(carouselEl);
-        rebuildSlides(carouselEl, isMobile ? 1 : 3);
+        rebuildSlides(carouselEl, getPerSlide());
         setTimeout(function() { lockCarouselHeight(carouselEl); }, 80);
     }
 
@@ -386,13 +393,13 @@ if (!('loading' in HTMLImageElement.prototype) && 'IntersectionObserver' in wind
         });
 
         var resizeTimer;
-        var lastWasMobile = window.innerWidth < MOBILE_BP;
+        var lastPerSlide = getPerSlide();
         window.addEventListener('resize', function() {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(function() {
-                var nowMobile = window.innerWidth < MOBILE_BP;
-                if (nowMobile !== lastWasMobile) {
-                    lastWasMobile = nowMobile;
+                var nowPerSlide = getPerSlide();
+                if (nowPerSlide !== lastPerSlide) {
+                    lastPerSlide = nowPerSlide;
                     applyLayout(projectsCarousel);
                     applyLayout(influencerCarousel);
                 } else {
