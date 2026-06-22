@@ -7,6 +7,9 @@
 # The real .htaccess holds live DB credentials (see htaccess.example).
 # Never commit it — copy htaccess.example to .htaccess and fill in values.
 .htaccess
+# Real DB credentials live OUTSIDE the web root (see gw-db-config.example.php).
+# This guards against accidentally committing one placed inside the repo.
+gw-db-config.php
 *.env
 .env
 

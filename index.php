@@ -273,8 +273,8 @@ main{display:block;min-height:100vh}
                             <h1 class="hero-heading">The <span class="highlight">#1 Supplier</span></h1>
                             <p class="hero-tagline">of modern wall, floor, and ceiling solutions<br class="d-none d-md-inline"> for Filipino homes and contractors.</p>
                             <div class="d-flex align-items-center gap-3 mt-4 flex-wrap">
-                                <a href="/catalog.php" class="btn hero-cta-btn">VIEW OUR PRODUCTS</a>
-                                <a href="/faq.php" class="hero-faq-link">FAQs <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                                <a href="/catalog" class="btn hero-cta-btn">VIEW OUR PRODUCTS</a>
+                                <a href="/faq" class="hero-faq-link">FAQs <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
                             </div>
                             <div class="hero-branch-counter">
                                 <div class="hero-branch-stat">
@@ -372,7 +372,7 @@ main{display:block;min-height:100vh}
 
         <!-- Room Simulator Button -->
         <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="200">
-            <a href="/room-simulator.php" class="btn project-view-all-btn">Try Our Room Simulator &rarr;</a>
+            <a href="/room-simulator" class="btn project-view-all-btn">Try Our Room Simulator &rarr;</a>
         </div>
 
     </div>
@@ -411,7 +411,7 @@ main{display:block;min-height:100vh}
 
             <div class="project-carousel-wrap">
                 <div class="d-flex justify-content-end me-3 mb-0">
-                    <a href="/projects.php" class="project-view-all-link">View All Projects &rarr;</a>
+                    <a href="/projects" class="project-view-all-link">View All Projects &rarr;</a>
                 </div>
                 <div id="projectsCarousel" class="carousel slide project-carousel" data-bs-ride="carousel" data-bs-wrap="false" data-aos="fade-up" data-aos-delay="100">
                     <div class="carousel-inner">
@@ -459,7 +459,7 @@ main{display:block;min-height:100vh}
                             <div class="carousel-item active">
                                 <div class="row g-4 justify-content-center">
                                     <div class="col-12 text-center py-5">
-                                        <p class="text-muted">No projects available. Check our <a href="/projects.php">projects page</a> for all listings.</p>
+                                        <p class="text-muted">No projects available. Check our <a href="/projects">projects page</a> for all listings.</p>
                                     </div>
                                 </div>
                             </div>
@@ -508,7 +508,7 @@ main{display:block;min-height:100vh}
 
             <div class="project-carousel-wrap">
                 <div class="d-flex justify-content-end me-3 mb-0">
-                    <a href="/influencers.php" class="project-view-all-link">View All Influencers &rarr;</a>
+                    <a href="/influencers" class="project-view-all-link">View All Influencers &rarr;</a>
                 </div>
                 <div id="influencerCarousel" class="carousel slide project-carousel" data-bs-ride="carousel" data-bs-wrap="false" data-aos="fade-up" data-aos-delay="100">
 

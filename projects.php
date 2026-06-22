@@ -22,11 +22,11 @@
     <meta name="description" content="Browse real installation projects by Greenwood Philippines. See how our wall panels, flooring, ceiling systems, and fence materials transform Filipino homes and commercial spaces.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Greenwood Philippines">
-    <link rel="canonical" href="https://greenwoodphilippines.com/projects.php">
+    <link rel="canonical" href="https://greenwoodphilippines.com/projects">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://greenwoodphilippines.com/projects.php">
+    <meta property="og:url" content="https://greenwoodphilippines.com/projects">
     <meta property="og:title" content="Our Projects | Greenwood Philippines">
     <meta property="og:description" content="See real installations using Greenwood Philippines materials – wall panels, flooring, ceiling systems, and fence solutions for homes and businesses.">
     <meta property="og:image" content="https://greenwoodphilippines.com/assets/images/project_cover.webp">
@@ -50,7 +50,7 @@
       "@type": "CollectionPage",
       "name": "Our Projects – Greenwood Philippines",
       "description": "Browse real installation projects showcasing Greenwood Philippines wall, floor, ceiling, and fence materials.",
-      "url": "https://greenwoodphilippines.com/projects.php",
+      "url": "https://greenwoodphilippines.com/projects",
       "isPartOf": {
         "@type": "WebSite",
         "name": "Greenwood Philippines",
@@ -357,7 +357,7 @@
         <div class="container">
             <div class="text-center" data-aos="fade-up">
                 <div class="album-header-logo">
-                    <img src="assets/images/nobg.webp" alt="Greenwood Philippines">
+                    <img src="/assets/images/nobg.webp" alt="Greenwood Philippines">
                 </div>
                 <h1 class="album-header-title">Our <span>Projects</span></h1>
                 <p class="album-header-sub">Discover our portfolio of exceptional landscaping and outdoor projects</p>
@@ -562,7 +562,7 @@
             <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">Let us help you bring your outdoor vision to life with our premium materials and expert guidance.</p>
             <div data-aos="fade-up" data-aos-delay="200">
                 <a href="/index.php#locations" class="btn btn-light btn-lg me-3">Contact Us</a>
-                <a href="/catalog.php" class="btn btn-outline-light btn-lg">View Products</a>
+                <a href="/catalog" class="btn btn-outline-light btn-lg">View Products</a>
             </div>
         </div>
     </section>

@@ -58,7 +58,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     </url>
 
     <url>
-        <loc><?php echo $base; ?>/catalog.php</loc>
+        <loc><?php echo $base; ?>/catalog</loc>
         <lastmod><?php echo $productLastMod; ?></lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -100,28 +100,28 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     </url>
 
     <url>
-        <loc><?php echo $base; ?>/projects.php</loc>
+        <loc><?php echo $base; ?>/projects</loc>
         <lastmod><?php echo $albumLastMod; ?></lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
 
     <url>
-        <loc><?php echo $base; ?>/room-simulator.php</loc>
+        <loc><?php echo $base; ?>/room-simulator</loc>
         <lastmod><?php echo $today; ?></lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.70</priority>
     </url>
 
     <url>
-        <loc><?php echo $base; ?>/influencers.php</loc>
+        <loc><?php echo $base; ?>/influencers</loc>
         <lastmod><?php echo $today; ?></lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.70</priority>
     </url>
 
     <url>
-        <loc><?php echo $base; ?>/faq.php</loc>
+        <loc><?php echo $base; ?>/faq</loc>
         <lastmod><?php echo $today; ?></lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.60</priority>

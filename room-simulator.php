@@ -65,18 +65,17 @@ sort($types);
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-<title>Room Simulator | Visualize Wall, Floor & Ceiling Materials – Greenwood Philippines</title>
+<title>Room Simulator | Greenwood Philippines</title>
 
 <!-- Primary SEO Meta Tags -->
 <meta name="description" content="Try Greenwood Philippines' free Room Simulator. Visualize how our wall panels, flooring, and ceiling materials will look in your space before you buy.">
-<meta name="keywords" content="room simulator, visualize wall panels, floor material visualizer, ceiling material preview, Greenwood Philippines room planner, home material simulator Philippines">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Greenwood Philippines">
-<link rel="canonical" href="https://greenwoodphilippines.com/room-simulator.php">
+<link rel="canonical" href="https://greenwoodphilippines.com/room-simulator">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://greenwoodphilippines.com/room-simulator.php">
+<meta property="og:url" content="https://greenwoodphilippines.com/room-simulator">
 <meta property="og:title" content="Room Simulator | Greenwood Philippines">
 <meta property="og:description" content="Visualize Greenwood Philippines materials in your room before purchasing. Try our free interactive room simulator.">
 <meta property="og:image" content="https://greenwoodphilippines.com/assets/images/nobg.webp">
@@ -100,7 +99,7 @@ sort($types);
   "@type": "WebApplication",
   "name": "Greenwood Philippines Room Simulator",
   "description": "An interactive room simulator to visualize wall, floor, and ceiling materials from Greenwood Philippines.",
-  "url": "https://greenwoodphilippines.com/room-simulator.php",
+  "url": "https://greenwoodphilippines.com/room-simulator",
   "applicationCategory": "DesignApplication",
   "operatingSystem": "Web",
   "isPartOf": {
@@ -585,6 +584,7 @@ body{background:#1a1f14;font-family:'Segoe UI',system-ui,sans-serif;color:#2d352
 <body>
 
 
+<h1 class="visually-hidden">Room Simulator — Visualize Wall, Floor &amp; Ceiling Materials | Greenwood Philippines</h1>
 <div class="sim-topbar">
   <img src="/assets/images/whitenobg.webp" alt="Greenwood Philippines" class="sim-logo">
   <div class="topbar-brand">
@@ -600,7 +600,7 @@ body{background:#1a1f14;font-family:'Segoe UI',system-ui,sans-serif;color:#2d352
     <div class="surf-tab" data-surface="ceiling" onclick="setSurface('ceiling');syncMobSurfBar(this)">Ceiling</div>
   </div>
   <div class="topbar-pills">
-    <a href="/catalog.php" class="pill" title="Back to Catalog"><i class="fas fa-arrow-left"></i><span class="pill-text"> Catalog</span></a>
+    <a href="/catalog" class="pill" title="Back to Catalog"><i class="fas fa-arrow-left"></i><span class="pill-text"> Catalog</span></a>
     <button class="pill" onclick="downloadCanvas()" title="Save Image"><i class="fas fa-download"></i><span class="pill-text"> Save</span></button>
     <button class="pill" onclick="clearCanvas()" title="Clear All"><i class="fas fa-trash-alt"></i><span class="pill-text"> Clear</span></button>
   </div>
@@ -1620,7 +1620,7 @@ function renderSnap(lines){const svg=document.getElementById('snapOverlay');svg.
 function clearSnap(){document.getElementById('snapOverlay').innerHTML='';}
 
 let layerDragId=null;
-function updateLayers(){const con=document.getElementById('layersList');if(!placedItems.length){con.innerHTML='<p class="text-muted text-center" style="font-size:.72rem;padding:14px 8px;line-height:1.5">Drag products onto canvas.</p>';return;}con.innerHTML=[...placedItems].reverse().map(item=>{const th=item.isFurniture?`<canvas class="lthumb" width="30" height="30" data-tid="${item.id}"></canvas>`:`<img src="${item.imgSrc}" onerror="this.src='/assets/images/nobg.webp'">`;const badges=(item.isFillGroup?'<span style="color:#648E37;font-size:.55rem;font-weight:700"> FILL</span>':item.isFurniture?' 🪑':'')+(item.flipX||item.flipY?`<span style="color:#648E37;font-size:.55rem">${item.flipX?'↔':''}${item.flipY?'↕':''}</span>`:'')+( item.rotation?`<span style="color:#c08020;font-size:.55rem"> ↻${item.rotation}°</span>`:'');const sub=item.isFurniture?`Furniture · ${item.size||''}`:`${item.color} · ${SURFACES[item.surface]?.label||item.surface}${item.isFillGroup?` · ${item.fillCols}×${item.fillRows}`:''}`;return `<div class="layer-item${item.id===selectedId?' sel':''}" data-id="${item.id}"><div class="lhandle" data-lh="1"><span></span><span></span><span></span></div>${th}<div class="linfo" onclick="selectItem(${item.id})"><div class="lname">${item.name}${badges}</div><div class="lsub">${sub}</div></div><button class="ldel" onclick="event.stopPropagation();deleteItem(${item.id})"><i class="fas fa-times"></i></button></div>`;}).join('');
+function updateLayers(){const con=document.getElementById('layersList');if(!placedItems.length){con.innerHTML='<p class="text-muted text-center" style="font-size:.72rem;padding:14px 8px;line-height:1.5">Drag products onto canvas.</p>';return;}con.innerHTML=[...placedItems].reverse().map(item=>{const th=item.isFurniture?`<canvas class="lthumb" width="30" height="30" data-tid="${item.id}"></canvas>`:`<img src="${item.imgSrc}" alt="${item.name||'Material'}" onerror="this.src='/assets/images/nobg.webp'">`;const badges=(item.isFillGroup?'<span style="color:#648E37;font-size:.55rem;font-weight:700"> FILL</span>':item.isFurniture?' 🪑':'')+(item.flipX||item.flipY?`<span style="color:#648E37;font-size:.55rem">${item.flipX?'↔':''}${item.flipY?'↕':''}</span>`:'')+( item.rotation?`<span style="color:#c08020;font-size:.55rem"> ↻${item.rotation}°</span>`:'');const sub=item.isFurniture?`Furniture · ${item.size||''}`:`${item.color} · ${SURFACES[item.surface]?.label||item.surface}${item.isFillGroup?` · ${item.fillCols}×${item.fillRows}`:''}`;return `<div class="layer-item${item.id===selectedId?' sel':''}" data-id="${item.id}"><div class="lhandle" data-lh="1"><span></span><span></span><span></span></div>${th}<div class="linfo" onclick="selectItem(${item.id})"><div class="lname">${item.name}${badges}</div><div class="lsub">${sub}</div></div><button class="ldel" onclick="event.stopPropagation();deleteItem(${item.id})"><i class="fas fa-times"></i></button></div>`;}).join('');
 con.querySelectorAll('canvas[data-tid]').forEach(tc=>{const item=placedItems.find(i=>i.id===+tc.dataset.tid);if(!item?.furnDef)return;const tc2=tc.getContext('2d');tc2.clearRect(0,0,30,30);try{item.furnDef.draw(tc2,30,30);}catch(e){};});
 // Pointer-event based reorder (works on touch AND mouse)
 let pDragId=null,pGhost=null,pOffY=0;

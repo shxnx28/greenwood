@@ -134,7 +134,7 @@ while ($row = $result->fetch_assoc()) {
     }
 
     // --- Product page URL ---
-    $link = $base_url . '/product-detail.php?id=' . $row['product_id'];
+    $link = $base_url . gw_product_url($row['product_id'], $row['product_name']);
 
     // --- Image: prefer variant image, fall back to parent image ---
     $image_path = !empty($row['variant_image'])

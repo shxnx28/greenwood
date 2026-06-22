@@ -30,7 +30,7 @@ function product_not_found() {
         <h1>404</h1>
         <h2>Product Not Found</h2>
         <p>Sorry, this product is no longer available or the link is incorrect. Browse our full catalog to find what you need.</p>
-        <a href="/catalog.php">Browse Catalog</a>
+        <a href="/catalog">Browse Catalog</a>
     </div>
 </body>
 </html><?php
@@ -59,6 +59,16 @@ $product = $result->fetch_assoc();
 
 if (!$product) {
     product_not_found();
+}
+
+// ── Clean-URL canonicalization ──
+// The canonical product URL is /product/<id>/<slug>. 301 any other form
+// (legacy ?id=, or a missing/stale slug) to it before emitting any HTML.
+$gwCleanPath = gw_product_url($product_id, $product['product_name']);
+$gwReqPath   = strtok($_SERVER['REQUEST_URI'] ?? '', '?');
+if ($gwReqPath !== $gwCleanPath) {
+    header('Location: ' . $gwCleanPath, true, 301);
+    exit;
 }
 
 // Helper function to ensure proper hex code format
@@ -179,14 +189,13 @@ foreach ($variants as $variant) {
     $seoImage       = !empty($product['image_path'])
         ? 'https://greenwoodphilippines.com/' . ltrim($product['image_path'], '/')
         : 'https://greenwoodphilippines.com/assets/images/nobg.webp';
-    $canonicalUrl   = 'https://greenwoodphilippines.com/product-detail.php?id=' . intval($product_id);
+    $canonicalUrl   = 'https://greenwoodphilippines.com' . $gwCleanPath;
     ?>
 
     <title><?php echo $seoProductName; ?> – <?php echo $seoCategory ?: 'Greenwood Philippines'; ?> | Greenwood Philippines</title>
 
     <!-- Primary SEO Meta Tags -->
     <meta name="description" content="<?php echo $seoDesc; ?>">
-    <meta name="keywords" content="<?php echo $seoProductName; ?>, <?php echo $seoCategory; ?> Philippines, <?php echo $seoType; ?>, Greenwood Philippines, building materials Philippines">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Greenwood Philippines">
     <link rel="canonical" href="<?php echo $canonicalUrl; ?>">
@@ -246,6 +255,22 @@ foreach ($variants as $variant) {
       }
     }
     </script>
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://greenwoodphilippines.com/" },
+<?php if (!empty($product['category_name'])): ?>
+        { "@type": "ListItem", "position": 2, "name": "<?php echo $seoCategory; ?>", "item": "https://greenwoodphilippines.com<?php echo gw_category_url($product['category_name']); ?>" },
+        { "@type": "ListItem", "position": 3, "name": "<?php echo $seoProductName; ?>", "item": "<?php echo $canonicalUrl; ?>" }
+<?php else: ?>
+        { "@type": "ListItem", "position": 2, "name": "<?php echo $seoProductName; ?>", "item": "<?php echo $canonicalUrl; ?>" }
+<?php endif; ?>
+      ]
+    }
+    </script>
     <link rel="icon" type="image/png" href="/assets/images/gw.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -291,7 +316,7 @@ foreach ($variants as $variant) {
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item"><a href="/index.php">Home</a></li>
-                    <li class="breadcrumb-item"><a href="/catalog.php">Products</a></li>
+                    <li class="breadcrumb-item"><a href="/catalog">Products</a></li>
                     <li class="breadcrumb-item active" aria-current="page">
                         <?php echo htmlspecialchars($product['product_name']); ?>
                     </li>
@@ -500,7 +525,7 @@ foreach ($variants as $variant) {
 
             <!-- No Results Message -->
             <div id="noVariants" class="text-center py-5" style="display: none;">
-                <img loading="lazy" decoding="async" src="/assets/images/nobg.webp" height="60" class="mb-3 opacity-50">
+                <img loading="lazy" decoding="async" src="/assets/images/nobg.webp" height="60" class="mb-3 opacity-50" alt="">
                 <h4 class="text-muted">No variants match your filters</h4>
                 <p class="text-muted">Try selecting different color or size options</p>
             </div>
@@ -508,7 +533,7 @@ foreach ($variants as $variant) {
             <!-- Back to Products -->
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <a href="/catalog.php" class="btn btn-outline-success btn-lg">
+                    <a href="/catalog" class="btn btn-outline-success btn-lg">
                         <i class="fas fa-arrow-left"></i> Back to All Products
                     </a>
                 </div>
