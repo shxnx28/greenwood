@@ -234,9 +234,15 @@ main{display:block;min-height:100vh}
         font-display: swap;
     }
     </style>
-    <!-- Main stylesheet deferred (non-render-blocking) -->
-    <link rel="preload" href="/css/style.css?v=8" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/css/style.css?v=8"></noscript>
+    <!-- Main stylesheet: preload + render-blocking (same as every other page on the site). -->
+    <!-- Loading it async (preload + onload swap) made the browser first-paint the hero from -->
+    <!-- the inline critical subset above, which omits the mobile hero rules (flex-end       -->
+    <!-- alignment, zero padding, 2.4rem heading, dark overlay, horizontal room tabs). When  -->
+    <!-- style.css then applied, the entire above-the-fold hero relaid-out — driving CLS to  -->
+    <!-- ~0.9 and delaying LCP until the swap landed (~8s on Slow 4G). style.css is           -->
+    <!-- same-origin, gzipped and already preloaded here, so blocking adds negligible FCP.    -->
+    <link rel="preload" href="/css/style.css?v=8" as="style">
+    <link rel="stylesheet" href="/css/style.css?v=8">
     <?php include 'pixel.php'; ?>
 </head>
 <body>
@@ -546,6 +552,7 @@ main{display:block;min-height:100vh}
                                                     <img src="<?php echo $infPhoto; ?>"
                                                          alt="<?php echo htmlspecialchars($inf['name']); ?>"
                                                          class="product-image"
+                                                         loading="lazy" decoding="async"
                                                          onerror="this.parentElement.classList.add('placeholder-image'); this.style.display='none';">
                                                 </div>
                                                 <div class="product-info">
