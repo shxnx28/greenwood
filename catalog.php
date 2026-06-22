@@ -159,14 +159,14 @@ foreach ($products_grouped as $pid => $p) {
     <meta name="author" content="Greenwood Philippines">
     <?php
     $canon_category = isset($_GET['category']) ? trim($_GET['category']) : '';
-    $canonical_url = 'https://greenwoodphilippines.com/catalog.php';
+    $canonical_url = 'https://greenwoodphilippines.com/catalog';
     if ($canon_category !== '') {
         $canonical_url = 'https://greenwoodphilippines.com' . gw_category_url($canon_category);
     }
     ?>
     <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://greenwoodphilippines.com/catalog.php">
+    <meta property="og:url" content="https://greenwoodphilippines.com/catalog">
     <meta property="og:title" content="Products Catalog | Greenwood Philippines">
     <meta property="og:description" content="Explore our full range of wall panels, flooring, ceiling systems, and fence solutions for Filipino homes and contractors. Filter, compare, and calculate coverage.">
     <meta property="og:image" content="https://greenwoodphilippines.com/assets/images/nobg.webp">
@@ -218,9 +218,9 @@ foreach ($products_grouped as $pid => $p) {
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
     <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
-    <link rel="icon" type="image/png" href="assets/images/gw.png">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/catalog.css?v=2">
+    <link rel="icon" type="image/png" href="/assets/images/gw.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/catalog.css?v=2">
 
     <style>
         /* ── Toast Notification System ── */
@@ -558,7 +558,7 @@ foreach ($products_grouped as $pid => $p) {
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center" data-aos="fade-up">
                     <div class="catalog-hero-logo">
-                        <img src="assets/images/nobg.webp" alt="Greenwood Philippines" class="catalog-hero-logo-img">
+                        <img src="/assets/images/nobg.webp" alt="Greenwood Philippines" class="catalog-hero-logo-img">
                     </div>
                     <h1 class="catalog-hero-title">Our <span class="catalog-hero-accent">Products</span></h1>
                     <p class="catalog-hero-sub">Premium quality materials for modern Filipino homes</p>
@@ -650,7 +650,7 @@ foreach ($products_grouped as $pid => $p) {
             </noscript>
             <div class="products-loading" style="position: relative;">
                 <div class="products-loading-overlay" id="productsLoadingOverlay">
-                    <img loading="lazy" decoding="async" src="assets/images/nobg.webp" alt="Greenwood Logo" class="loading-logo">
+                    <img loading="lazy" decoding="async" src="/assets/images/nobg.webp" alt="Greenwood Logo" class="loading-logo">
                     <div class="loading-spinner"></div>
                     <div class="loading-text">Loading Products...</div>
                 </div>
@@ -681,18 +681,18 @@ foreach ($products_grouped as $pid => $p) {
                                         <?php
                                         if (!empty($product['first_image'])) {
                                             $raw = $product['first_image'];
-                                            if (strpos($raw, 'uploads/') === 0)       $img = 'admin/' . $raw;
-                                            elseif (strpos($raw, 'products/') === 0)  $img = 'admin/uploads/' . $raw;
+                                            if (strpos($raw, 'uploads/') === 0)       $img = '/admin/' . $raw;
+                                            elseif (strpos($raw, 'products/') === 0)  $img = '/admin/uploads/' . $raw;
                                             else                                       $img = $raw;
                                         } else {
-                                            $img = 'assets/images/nobg.webp';
+                                            $img = '/assets/images/nobg.webp';
                                         }
                                         ?>
                                         <img
                                             src="<?php echo htmlspecialchars($img); ?>"
                                             alt="<?php echo htmlspecialchars($product['product_name']); ?>"
                                             class="product-image"
-                                            onerror="this.onerror=null;this.src='assets/images/nobg.webp';">
+                                            onerror="this.onerror=null;this.src='/assets/images/nobg.webp';">
 
                                         <?php if (!empty($product['product_type_name'])): ?>
                                             <span class="product-badge">
@@ -743,7 +743,7 @@ foreach ($products_grouped as $pid => $p) {
 
             <!-- No Results -->
             <div id="noResults" class="text-center py-5" style="display:none;">
-                <img loading="lazy" decoding="async" src="assets/images/nobg.webp" height="60" class="mb-3 opacity-50" alt="">
+                <img loading="lazy" decoding="async" src="/assets/images/nobg.webp" height="60" class="mb-3 opacity-50" alt="">
                 <h3 class="text-muted">No products found</h3>
                 <p class="text-muted">Try adjusting your filters or search terms</p>
             </div>

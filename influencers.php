@@ -17,11 +17,11 @@
     <meta name="description" content="Meet the influencers and content creators who trust and feature Greenwood Philippines products. See their reactions and honest reviews of our wall panels, flooring, and more.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Greenwood Philippines">
-    <link rel="canonical" href="https://greenwoodphilippines.com/influencers.php">
+    <link rel="canonical" href="https://greenwoodphilippines.com/influencers">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://greenwoodphilippines.com/influencers.php">
+    <meta property="og:url" content="https://greenwoodphilippines.com/influencers">
     <meta property="og:title" content="Our Influencers | Greenwood Philippines">
     <meta property="og:description" content="Meet content creators and influencers who feature Greenwood Philippines products in their homes and reviews.">
     <meta property="og:image" content="https://greenwoodphilippines.com/assets/images/parallax.webp">
@@ -45,7 +45,7 @@
       "@type": "CollectionPage",
       "name": "Our Influencers – Greenwood Philippines",
       "description": "Browse content creators and influencers who feature Greenwood Philippines products.",
-      "url": "https://greenwoodphilippines.com/influencers.php",
+      "url": "https://greenwoodphilippines.com/influencers",
       "isPartOf": {
         "@type": "WebSite",
         "name": "Greenwood Philippines",
@@ -262,8 +262,8 @@
 
     <!-- Influencers Header with Background Image -->
     <section class="album-header">
-        <video class="album-header-video" id="albumHeaderVideo" muted loop playsinline preload="none" poster="assets/images/parallax.webp">
-            <source data-src="assets/videos/header.mp4" type="video/mp4">
+        <video class="album-header-video" id="albumHeaderVideo" muted loop playsinline preload="none" poster="/assets/images/parallax.webp">
+            <source data-src="/assets/videos/header.mp4" type="video/mp4">
         </video>
         <script>
         // Defer the 8.4 MB header video so it never blocks first paint. The
@@ -285,7 +285,7 @@
         <div class="container">
             <div class="text-center" data-aos="fade-up">
                 <div class="album-header-logo">
-                    <img src="assets/images/nobg.webp" alt="Greenwood Philippines">
+                    <img src="/assets/images/nobg.webp" alt="Greenwood Philippines">
                 </div>
                 <h1 class="album-header-title">Our <span>Influencers</span></h1>
                 <p class="album-header-sub">Content creators and community members who trust and feature Greenwood Philippines</p>
@@ -471,7 +471,7 @@
             <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">Are you a content creator or influencer interested in featuring Greenwood Philippines? We'd love to work with you.</p>
             <div data-aos="fade-up" data-aos-delay="200">
                 <a href="/index.php#locations" class="btn btn-light btn-lg me-3">Contact Us</a>
-                <a href="/catalog.php" class="btn btn-outline-light btn-lg">View Products</a>
+                <a href="/catalog" class="btn btn-outline-light btn-lg">View Products</a>
             </div>
         </div>
     </section>

@@ -36,7 +36,7 @@ if (!$albumExists) {
         <h1>404</h1>
         <h2>Album Not Found</h2>
         <p>Sorry, this project album is no longer available or the link is incorrect. Explore our other completed projects instead.</p>
-        <a href="/projects.php">View Projects</a>
+        <a href="/projects">View Projects</a>
     </div>
 </body>
 </html><?php
@@ -397,7 +397,7 @@ if (!$albumExists) {
         <div class="album-header-overlay"></div>
         <div class="container">
             <div data-aos="fade-up">
-                <a href="/projects.php" class="back-link">
+                <a href="/projects" class="back-link">
                     <i class="bi bi-arrow-left"></i> Back to Projects
                 </a>
                 <div class="album-header-logo">
@@ -541,7 +541,7 @@ if (!$albumExists) {
         <div class="container text-center">
             <h2 class="display-4 mb-4">Album Not Found</h2>
             <p class="lead mb-4">The album you're looking for doesn't exist or has been removed.</p>
-            <a href="/projects.php" class="btn btn-success btn-lg">Browse All Projects</a>
+            <a href="/projects" class="btn btn-success btn-lg">Browse All Projects</a>
         </div>
     </section>
     <?php endif; ?>
@@ -554,7 +554,7 @@ if (!$albumExists) {
             <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">Let us help you create something similar with our premium materials and expert guidance.</p>
             <div data-aos="fade-up" data-aos-delay="200">
                 <a href="/index.php#contact" class="btn btn-light btn-lg me-3">Contact Us</a>
-                <a href="/catalog.php" class="btn btn-outline-light btn-lg">View Products</a>
+                <a href="/catalog" class="btn btn-outline-light btn-lg">View Products</a>
             </div>
         </div>
     </section>

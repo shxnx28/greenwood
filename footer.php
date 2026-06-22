@@ -36,7 +36,7 @@
                     <li><a href="/#projects" class="text-decoration-none">Projects</a></li>
                     <li><a href="/#about" class="text-decoration-none">About Us</a></li>
                     <li><a href="/#locations" class="text-decoration-none">Contact</a></li>
-                    <li><a href="/faq.php" class="text-decoration-none">FAQs</a></li>
+                    <li><a href="/faq" class="text-decoration-none">FAQs</a></li>
                 </ul>
             </div>
             <!-- Product Links -->
@@ -47,8 +47,8 @@
                     <li><a href="/catalog/floor" class="text-decoration-none">Floor Solutions</a></li>
                     <li><a href="/catalog/ceiling" class="text-decoration-none">Ceiling Solutions</a></li>
                     <li><a href="/catalog/fence" class="text-decoration-none">Fence Solutions</a></li>
-                    <li><a href="/catalog.php" class="text-decoration-none">View All Products</a></li>
-                    <li><a href="/projects.php" class="text-decoration-none">Our Projects</a></li>
+                    <li><a href="/catalog" class="text-decoration-none">View All Products</a></li>
+                    <li><a href="/projects" class="text-decoration-none">Our Projects</a></li>
                     <li><a href="/sitemap.php" class="text-decoration-none" rel="nofollow">Sitemap</a></li>
                 </ul>
             </div>

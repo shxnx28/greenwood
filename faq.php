@@ -10,11 +10,11 @@
     <meta name="description" content="Frequently asked questions about Greenwood Philippines products, installation, delivery, and more.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Greenwood Philippines">
-    <link rel="canonical" href="https://greenwoodphilippines.com/faq.php">
+    <link rel="canonical" href="https://greenwoodphilippines.com/faq">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://greenwoodphilippines.com/faq.php">
+    <meta property="og:url" content="https://greenwoodphilippines.com/faq">
     <meta property="og:title" content="FAQs - Greenwood Philippines">
     <meta property="og:description" content="Frequently asked questions about Greenwood Philippines products, installation, delivery, payment, and warranty.">
     <meta property="og:image" content="https://greenwoodphilippines.com/assets/images/nobg.webp">
@@ -753,7 +753,7 @@
                                     <li><strong>Ceiling Solutions</strong> — modern ceiling panels and systems</li>
                                     <li><strong>Fence Solutions</strong> — weather-resistant fencing materials</li>
                                 </ul>
-                                You can browse our full catalog at <a href="/catalog.php">catalog page</a>.
+                                You can browse our full catalog at <a href="/catalog">catalog page</a>.
                             </div>
                         </div>
                     </div>
@@ -774,7 +774,7 @@
                             <div class="faq-answer-inner"
                                 data-en="Yes! Many of our products are designed to withstand the Philippine climate — including heat, humidity, and rain. Our fence solutions and select wall and ceiling panels are rated for outdoor use. Each product listing in our <a href='/catalog.php'>catalog</a> specifies whether it is suitable for indoor, outdoor, or both."
                                 data-tl="Oo! Marami sa aming mga produkto ay dinisenyo para tiisin ang klima ng Pilipinas — kasama na ang init, halumigmig, at ulan. Ang aming fence solutions at ilang wall at ceiling panels ay angkop para sa labas ng bahay. Bawat produkto sa aming <a href='/catalog.php'>katalogo</a> ay nagtatakda kung para sa loob, labas, o pareho.">
-                                Yes! Many of our products are designed to withstand the Philippine climate — including heat, humidity, and rain. Our fence solutions and select wall and ceiling panels are rated for outdoor use. Each product listing in our <a href="/catalog.php">catalog</a> specifies whether it is suitable for indoor, outdoor, or both.
+                                Yes! Many of our products are designed to withstand the Philippine climate — including heat, humidity, and rain. Our fence solutions and select wall and ceiling panels are rated for outdoor use. Each product listing in our <a href="/catalog">catalog</a> specifies whether it is suitable for indoor, outdoor, or both.
                             </div>
                         </div>
                     </div>
