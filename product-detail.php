@@ -4,9 +4,41 @@ require_once 'admin/db.php';
 // Get product ID from URL
 $product_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
-if (!$product_id) {
-    header('Location: catalog.php');
+// Return a real 404 (not a redirect) for missing/deleted products, so search
+// engines drop those dead URLs cleanly instead of flagging "Page with redirect".
+function product_not_found() {
+    http_response_code(404);
+    header('Content-Type: text/html; charset=UTF-8');
+    ?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title>Product Not Found – Greenwood Philippines</title>
+    <style>
+        body{margin:0;font-family:'Inter','Segoe UI',sans-serif;background:#f6faf0;color:#303823;display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:20px;}
+        .nf{max-width:480px;}
+        .nf h1{font-size:4rem;margin:0;color:#648E37;}
+        .nf h2{font-size:1.4rem;margin:.5rem 0 1rem;}
+        .nf p{color:#5a5a5a;line-height:1.6;margin-bottom:1.5rem;}
+        .nf a{display:inline-block;background:#648E37;color:#fff;text-decoration:none;font-weight:700;padding:.85rem 2rem;border-radius:8px;}
+    </style>
+</head>
+<body>
+    <div class="nf">
+        <h1>404</h1>
+        <h2>Product Not Found</h2>
+        <p>Sorry, this product is no longer available or the link is incorrect. Browse our full catalog to find what you need.</p>
+        <a href="/catalog.php">Browse Catalog</a>
+    </div>
+</body>
+</html><?php
     exit;
+}
+
+if (!$product_id) {
+    product_not_found();
 }
 
 // Check if user is admin (for SKU visibility)
@@ -26,8 +58,7 @@ $result = $stmt->get_result();
 $product = $result->fetch_assoc();
 
 if (!$product) {
-    header('Location: catalog.php');
-    exit;
+    product_not_found();
 }
 
 // Helper function to ensure proper hex code format
