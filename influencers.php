@@ -263,9 +263,25 @@
 
     <!-- Influencers Header with Background Image -->
     <section class="album-header">
-        <video class="album-header-video" autoplay muted loop playsinline poster="assets/images/parallax.webp">
-            <source src="assets/videos/header.mp4" type="video/mp4">
+        <video class="album-header-video" id="albumHeaderVideo" muted loop playsinline preload="none" poster="assets/images/parallax.webp">
+            <source data-src="assets/videos/header.mp4" type="video/mp4">
         </video>
+        <script>
+        // Defer the 8.4 MB header video so it never blocks first paint. The
+        // poster shows instantly; the video loads & plays only after the page
+        // has finished loading (muted playback is allowed programmatically).
+        window.addEventListener('load', function () {
+            var v = document.getElementById('albumHeaderVideo');
+            if (!v) return;
+            var s = v.querySelector('source[data-src]');
+            if (s && !s.getAttribute('src')) {
+                s.setAttribute('src', s.getAttribute('data-src'));
+                v.load();
+            }
+            var p = v.play();
+            if (p && typeof p.catch === 'function') p.catch(function () {});
+        });
+        </script>
         <div class="album-header-overlay"></div>
         <div class="container">
             <div class="text-center" data-aos="fade-up">

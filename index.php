@@ -138,12 +138,12 @@ img{max-width:100%}
 .navbar-toggler{padding:.25rem .75rem;font-size:1.25rem;line-height:1;background-color:transparent;border:1px solid transparent;border-radius:.25rem;cursor:pointer}
 .navbar-toggler-icon{display:inline-block;width:1.5em;height:1.5em;vertical-align:middle;background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833,37,41,0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");background-repeat:no-repeat;background-position:center;background-size:100%}
 .collapse:not(.show){display:none}
-@media(min-width:992px){
-  .navbar-expand-lg{flex-wrap:nowrap;justify-content:flex-start}
-  .navbar-expand-lg .navbar-nav{flex-direction:row}
-  .navbar-expand-lg .navbar-nav .nav-link{padding-right:.5rem;padding-left:.5rem}
-  .navbar-expand-lg .navbar-collapse{display:flex!important;flex-basis:auto}
-  .navbar-expand-lg .navbar-toggler{display:none}
+@media(min-width:1200px){
+  .navbar-expand-xl{flex-wrap:nowrap;justify-content:flex-start}
+  .navbar-expand-xl .navbar-nav{flex-direction:row}
+  .navbar-expand-xl .navbar-nav .nav-link{padding-right:.5rem;padding-left:.5rem}
+  .navbar-expand-xl .navbar-collapse{display:flex!important;flex-basis:auto}
+  .navbar-expand-xl .navbar-toggler{display:none}
 }
 /* ── BOOTSTRAP 5.3 BUTTON (above-fold subset) ── */
 .btn{display:inline-block;font-weight:400;line-height:1.5;color:#212529;text-align:center;text-decoration:none;vertical-align:middle;cursor:pointer;-webkit-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;border-radius:.375rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}
@@ -158,7 +158,7 @@ main{display:block;min-height:100vh}
 .navbar{transition:background .35s ease,box-shadow .35s ease,padding .35s ease;padding:1rem 0;background:transparent!important;box-shadow:none!important}
 .navbar.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.10)!important;background:rgba(255,255,255,.97)!important;backdrop-filter:blur(8px);padding:.6rem 0}
 .navbar.navbar-transparent .navbar-brand{opacity:0;pointer-events:none;transition:opacity .35s ease}
-@media(min-width:992px){.navbar.navbar-transparent .navbar-brand{opacity:0!important;pointer-events:none!important}}
+@media(min-width:1200px){.navbar.navbar-transparent .navbar-brand{opacity:0!important;pointer-events:none!important}}
 .navbar.scrolled .navbar-brand{opacity:1;pointer-events:auto}
 .navbar-brand .brand-logo{display:flex;align-items:center;gap:10px}
 .navbar-brand .brand-logo img{width:30px;height:30px}
@@ -166,7 +166,7 @@ main{display:block;min-height:100vh}
 .navbar-brand .brand-logo strong{font-size:1.2rem;color:#303823;font-weight:700}
 .navbar-brand .brand-logo span{font-size:.7rem;color:#5a5a5a;font-weight:400;letter-spacing:1px}
 .navbar-nav .nav-link{color:#303823;font-weight:600;letter-spacing:.5px;margin:0 1rem;position:relative;transition:color .3s ease}
-@media(min-width:992px){
+@media(min-width:1200px){
     .navbar.navbar-transparent .navbar-nav .nav-link{color:#fff!important}
     .navbar.navbar-transparent .navbar-brand .brand-logo strong,
     .navbar.navbar-transparent .navbar-brand .brand-logo span{color:#fff!important}

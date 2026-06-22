@@ -35,7 +35,7 @@
         .navbar.navbar-transparent .navbar-toggler {
             border-color: rgba(255,255,255,0.6) !important;
         }
-        @media (max-width: 991px) {
+        @media (max-width: 1199px) {
             .navbar.navbar-transparent .navbar-collapse.show,
             .navbar.navbar-transparent .navbar-collapse.collapsing {
                 background: rgba(30, 38, 20, 0.97) !important;
