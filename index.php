@@ -32,7 +32,11 @@ if ($_r) $_upcoming_count = (int)$_r->fetch_assoc()['c'];
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <!-- Preload critical above-fold assets -->
     <link rel="preload" href="/assets/images/nobg.webp" as="image" fetchpriority="high">
-    <link rel="preload" href="/assets/images/sample.webp" as="image" fetchpriority="high">
+    <!-- Hero (LCP) image preloaded per-viewport: phones get a right-sized 39KB copy — the -->
+    <!-- full 1980x1200/190KB file is overkill on mobile and sits under a near-opaque dark   -->
+    <!-- overlay there — while desktop keeps the full-res original. Saves ~150KB on mobile LCP. -->
+    <link rel="preload" href="/assets/images/livingroom-m.webp" as="image" media="(max-width: 991px)" fetchpriority="high">
+    <link rel="preload" href="/assets/images/livingroom.webp" as="image" media="(min-width: 992px)" fetchpriority="high">
     <!-- AOS CSS loaded async to avoid render blocking -->
     <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
@@ -172,7 +176,7 @@ main{display:block;min-height:100vh}
 }
 /* Hero: light background, sample.png via .hero-bg-image (matches style.css) */
 .hero-section{position:relative;width:100%;min-height:100vh;display:flex;align-items:center;padding:100px 0 60px;background-color:#f5f2ee;overflow:hidden}
-.hero-bg-image{position:absolute;inset:0;background-image:url('/assets/images/sample.webp');background-size:cover;background-position:center right;background-repeat:no-repeat;z-index:1}
+.hero-bg-image{position:absolute;inset:0;background-image:url('/assets/images/livingroom.webp');background-size:cover;background-position:center right;background-repeat:no-repeat;z-index:1}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(255,255,255,.99) 0%,rgba(255,255,255,.88) 30%,rgba(255,255,255,.38) 52%,rgba(255,255,255,.00) 70%);z-index:2}
 .hero-content{position:relative;z-index:3;width:100%}
 .hero-text{color:#303823}
@@ -188,6 +192,8 @@ main{display:block;min-height:100vh}
 .hero-branch-divider{width:1px;height:40px;background:rgba(48,56,35,.3)!important;flex-shrink:0;align-self:center}
 @media(min-width:992px){.hero-content .container{padding-left:0 !important}}
 @media(max-width:991px){
+    /* Mobile hero uses the right-sized LCP image (mirrors the <head> preload + style.css) */
+    .hero-bg-image{background-image:url('/assets/images/livingroom-m.webp')}
     .hero-content .container { max-width: 100% !important; padding-left: 20px !important; padding-right: 20px !important; }
     .hero-content .row > * { padding-left: 0 !important; padding-right: 0 !important; }
     .navbar > .container { padding-left: 56px !important; padding-right: 20px !important; justify-content: flex-start !important; }
@@ -254,7 +260,7 @@ main{display:block;min-height:100vh}
         <div class="hero-bg-image" id="heroBgImage"></div>
         <div class="hero-overlay"></div>
         <div class="hero-room-tabs" id="heroRoomTabs">
-            <button class="hero-room-tab active" data-bg="/assets/images/sample.webp" type="button">
+            <button class="hero-room-tab active" data-bg="/assets/images/livingroom.webp" type="button">
                 <span class="pill">Living room</span>
             </button>
             <button class="hero-room-tab" data-bg="/assets/images/kitchen.webp" type="button">
@@ -1120,6 +1126,11 @@ main{display:block;min-height:100vh}
                 tab.classList.add('active');
 
                 var newBg = tab.getAttribute('data-bg');
+                // On phones, swap in the right-sized copy (e.g. kitchen-m.webp) to match the
+                // mobile hero preload and keep tab crossfades fast on slow connections.
+                if (window.matchMedia('(max-width: 991px)').matches) {
+                    newBg = newBg.replace(/\.webp$/, '-m.webp');
+                }
                 bg.style.opacity = '0';
                 setTimeout(function () {
                     bg.style.backgroundImage = "url('" + newBg + "')";
