@@ -205,7 +205,7 @@ main{display:block;min-height:100vh}
 .hero-room-tab .pill{writing-mode:vertical-rl;text-orientation:mixed;font-size:.85rem;letter-spacing:.5px;color:#fff;opacity:.85;font-weight:500;text-shadow:0 1px 3px rgba(0,0,0,.4);transition:opacity .25s,font-weight .25s}
 .hero-room-tab.active{background:rgba(48,56,35,.92)}
 .hero-room-tab.active .pill{opacity:1;font-weight:700;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.3)}
-.hero-bg-image{transition:opacity .25s ease}
+.hero-bg-image{transition:transform .6s cubic-bezier(.4,0,.2,1),opacity .35s ease}
 @media(max-width:991px){.hero-room-tabs{width:36px;gap:8px}.hero-room-tab{width:32px;min-height:90px;padding:10px 6px}.hero-room-tab .pill{font-size:.68rem}}
 
 .project-carousel-wrap .project-carousel {
@@ -221,12 +221,11 @@ main{display:block;min-height:100vh}
 @media(min-width:992px){.hero-content{padding-left:0}.hero-content .col-lg-6:first-child{margin-left:0;padding-left:56px;display:flex;flex-direction:column;align-items:flex-start;}}
     </style>
     <!-- Bootstrap CSS deferred (non-render-blocking) -->
-    <!-- Bootstrap CSS: preload + blocking. Loading it deferred caused a 1,100ms Style &   -->
-    <!-- Layout thrash on the main thread as the browser recalculated all styles post-load. -->
-    <!-- With our inline critical CSS stubs the hero still paints correctly before this     -->
-    <!-- arrives, but we avoid the late recalc penalty by letting it apply on first parse.  -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Bootstrap CSS: self-hosted (same-origin) + render-blocking. Serving it locally     -->
+    <!-- removes the cross-origin jsdelivr DNS+TLS handshake from the critical path (a big   -->
+    <!-- FCP win on slow mobile) while keeping it blocking so styles apply on first parse    -->
+    <!-- (no post-load recalc thrash).                                                       -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="/assets/images/gw.png">
     <!-- Bootstrap Icons deferred (non-render-blocking) — icons are not above-fold critical -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -870,7 +869,7 @@ main{display:block;min-height:100vh}
     </main><!-- /#main-content -->
     <?php include 'footer.php'; ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script src="/js/script.js" defer></script>
 
@@ -1113,29 +1112,61 @@ main{display:block;min-height:100vh}
     </script>
 
     <script>
-    // ── HERO ROOM TABS: crossfade hero background image ──
+    // ── HERO ROOM TABS: slide the hero background between rooms ──
     document.addEventListener('DOMContentLoaded', function () {
         var tabs = document.querySelectorAll('#heroRoomTabs .hero-room-tab');
         var bg = document.getElementById('heroBgImage');
         if (!tabs.length || !bg) return;
 
-        tabs.forEach(function (tab) {
+        var SLIDE_MS = 600;  // keep in sync with the .hero-bg-image transform transition
+        var current = 0;     // Living room is the active tab on load
+        var busy = false;
+
+        tabs.forEach(function (tab, idx) {
             tab.addEventListener('click', function () {
-                if (tab.classList.contains('active')) return;
+                if (busy || tab.classList.contains('active')) return;
+                busy = true;
+
                 tabs.forEach(function (t) { t.classList.remove('active'); });
                 tab.classList.add('active');
 
+                // Later tab slides in from the right, earlier tab slides in from the left
+                var dir = idx > current ? 1 : -1;
+
                 var newBg = tab.getAttribute('data-bg');
-                // On phones, swap in the right-sized copy (e.g. kitchen-m.webp) to match the
-                // mobile hero preload and keep tab crossfades fast on slow connections.
+                // On phones, swap in the right-sized copy (e.g. kitchen-m.webp)
                 if (window.matchMedia('(max-width: 991px)').matches) {
                     newBg = newBg.replace(/\.webp$/, '-m.webp');
                 }
-                bg.style.opacity = '0';
+
+                // Incoming layer: same styling as the base, parked just off-screen
+                var incoming = document.createElement('div');
+                incoming.className = bg.className + ' hero-bg-incoming';
+                incoming.style.transition = 'none';
+                incoming.style.backgroundImage = "url('" + newBg + "')";
+                incoming.style.transform = 'translateX(' + (dir * 100) + '%)';
+                bg.parentNode.insertBefore(incoming, bg.nextSibling);
+
+                // Lock the start position (no animation), then enable the transition
+                void incoming.offsetWidth;
+                incoming.style.transition = '';
+
+                requestAnimationFrame(function () {
+                    incoming.style.transform = 'translateX(0)';
+                    bg.style.transform = 'translateX(' + (dir * -100) + '%)';
+                });
+
                 setTimeout(function () {
+                    // Hand the new image to the base layer with no visible jump
+                    bg.style.transition = 'none';
                     bg.style.backgroundImage = "url('" + newBg + "')";
-                    bg.style.opacity = '1';
-                }, 250);
+                    bg.style.transform = 'translateX(0)';
+                    void bg.offsetWidth;          // flush, then restore the CSS transition
+                    bg.style.transition = '';
+                    if (incoming.parentNode) incoming.parentNode.removeChild(incoming);
+                    current = idx;
+                    busy = false;
+                }, SLIDE_MS);
             });
         });
     });
