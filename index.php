@@ -37,7 +37,7 @@ if ($_r) $_upcoming_count = (int)$_r->fetch_assoc()['c'];
     <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greenwood Philippines | #1 Supplier of Wall, Floor & Ceiling Solutions</title>
+    <title>Wall, Floor & Ceiling Materials | Greenwood Philippines</title>
 
     <!-- Primary SEO Meta Tags -->
     <meta name="description" content="Greenwood Philippines is the #1 supplier of modern wall, floor, ceiling, and fence solutions for Filipino homes and contractors. Browse our premium quality materials today.">

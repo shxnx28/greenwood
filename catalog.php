@@ -153,7 +153,7 @@ foreach ($products_grouped as $pid => $p) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products Catalog | Wall, Floor & Ceiling Materials – Greenwood Philippines</title>
+    <title>Building Materials Catalog | Greenwood Philippines</title>
     <meta name="description" content="Browse Greenwood Philippines' full catalog of premium wall panels, flooring, ceiling systems, and fence solutions. Filter by category, compare prices, and calculate area coverage.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Greenwood Philippines">
@@ -196,6 +196,22 @@ foreach ($products_grouped as $pid => $p) {
     }
     </script>
 
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://greenwoodphilippines.com/" },
+<?php if ($canon_category !== ''): ?>
+        { "@type": "ListItem", "position": 2, "name": "Catalog", "item": "https://greenwoodphilippines.com/catalog.php" },
+        { "@type": "ListItem", "position": 3, "name": "<?php echo htmlspecialchars(ucfirst($canon_category)); ?>", "item": "<?php echo htmlspecialchars($canonical_url); ?>" }
+<?php else: ?>
+        { "@type": "ListItem", "position": 2, "name": "Catalog", "item": "https://greenwoodphilippines.com/catalog.php" }
+<?php endif; ?>
+      ]
+    }
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">

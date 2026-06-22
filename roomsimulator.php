@@ -65,7 +65,7 @@ sort($types);
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-<title>Room Simulator | Visualize Wall, Floor & Ceiling Materials – Greenwood Philippines</title>
+<title>Room Simulator | Greenwood Philippines</title>
 
 <!-- Primary SEO Meta Tags -->
 <meta name="description" content="Try Greenwood Philippines' free Room Simulator. Visualize how our wall panels, flooring, and ceiling materials will look in your space before you buy.">

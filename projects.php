@@ -16,7 +16,7 @@
     $pageTitle = 'Our Projects';
     ?>
     
-    <title>Our Projects | Greenwood Philippines – Real Home & Commercial Installations</title>
+    <title>Finished Projects | Greenwood Philippines</title>
 
     <!-- Primary SEO Meta Tags -->
     <meta name="description" content="Browse real installation projects by Greenwood Philippines. See how our wall panels, flooring, ceiling systems, and fence materials transform Filipino homes and commercial spaces.">
