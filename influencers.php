@@ -15,7 +15,6 @@
 
     <!-- Primary SEO Meta Tags -->
     <meta name="description" content="Meet the influencers and content creators who trust and feature Greenwood Philippines products. See their reactions and honest reviews of our wall panels, flooring, and more.">
-    <meta name="keywords" content="Greenwood Philippines influencers, home improvement creators Philippines, wall panel review, flooring review Philippines, content creators Greenwood">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Greenwood Philippines">
     <link rel="canonical" href="https://greenwoodphilippines.com/influencers.php">

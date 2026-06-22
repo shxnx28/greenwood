@@ -41,7 +41,6 @@ if ($_r) $_upcoming_count = (int)$_r->fetch_assoc()['c'];
 
     <!-- Primary SEO Meta Tags -->
     <meta name="description" content="Greenwood Philippines is the #1 supplier of modern wall, floor, ceiling, and fence solutions for Filipino homes and contractors. Browse our premium quality materials today.">
-    <meta name="keywords" content="Greenwood Philippines, wall panels, floor solutions, ceiling materials, fence solutions, Filipino home materials, wall cladding, flooring Philippines, ceiling systems, building materials Philippines">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Greenwood Philippines">
     <link rel="canonical" href="https://greenwoodphilippines.com/">

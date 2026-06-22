@@ -8,6 +8,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQs | Greenwood Philippines</title>
     <meta name="description" content="Frequently asked questions about Greenwood Philippines products, installation, delivery, and more.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Greenwood Philippines">
+    <link rel="canonical" href="https://greenwoodphilippines.com/faq.php">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://greenwoodphilippines.com/faq.php">
+    <meta property="og:title" content="FAQs - Greenwood Philippines">
+    <meta property="og:description" content="Frequently asked questions about Greenwood Philippines products, installation, delivery, payment, and warranty.">
+    <meta property="og:image" content="https://greenwoodphilippines.com/assets/images/nobg.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Greenwood Philippines">
+    <meta property="og:locale" content="en_PH">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FAQs - Greenwood Philippines">
+    <meta name="twitter:description" content="Frequently asked questions about Greenwood Philippines products, installation, delivery, payment, and warranty.">
+    <meta name="twitter:image" content="https://greenwoodphilippines.com/assets/images/nobg.webp">
+
+    <!-- FAQPage Structured Data (generated from the visible Q&A) -->
+    <?php
+    // FAQ data sourced from the visible accordion content below — keeps schema in sync with the page.
+    $faqSchema = [
+        ['q' => 'What types of products does Greenwood Philippines offer?', 'a' => 'Greenwood Philippines offers four main product categories: Wall Solutions — decorative wall panels and cladding for interior and exterior use Floor Solutions — durable flooring materials suitable for residential and commercial spaces Ceiling Solutions — modern ceiling panels and systems Fence Solutions — weather-resistant fencing materials You can browse our full catalog at catalog page .'],
+        ['q' => 'Are your products suitable for outdoor use?', 'a' => 'Yes! Many of our products are designed to withstand the Philippine climate — including heat, humidity, and rain. Our fence solutions and select wall and ceiling panels are rated for outdoor use. Each product listing in our catalog specifies whether it is suitable for indoor, outdoor, or both.'],
+        ['q' => 'Do you offer product samples before purchasing?', 'a' => 'Yes, we encourage customers to visit any of our branches to view physical samples before making a purchase. You can see the actual texture, color, and finish of our products in person. Contact your nearest branch to confirm sample availability.'],
+        ['q' => 'Can I customize colors or sizes for bulk orders?', 'a' => 'For bulk and contractor orders, we may accommodate special requests for colors and sizes depending on the product line and quantity. Please reach out to us through our contact page or visit your nearest branch to discuss your project requirements.'],
+        ['q' => 'Do you provide installation services?', 'a' => 'Yes, Greenwood Philippines can connect you with third-party installation contacts for most of our product lines. Please note that installation is carried out by independent installers — Greenwood Philippines does not perform the installation directly. Installation fees vary depending on the product type, quantity, and location. Please contact your nearest branch for a referral and quote.'],
+        ['q' => 'Can I install the products myself (DIY)?', 'a' => 'Absolutely. Our products are designed with straightforward installation in mind. When you purchase from us, we provide installation guides and technical support. However, we still recommend professional installation for best results, especially for large areas or complex layouts.'],
+        ['q' => 'What tools are needed to install your wall panels?', 'a' => 'Basic installation typically requires a measuring tape, level, saw (for cutting panels to size), drill, and appropriate adhesive or screws depending on the surface. Specific tools may vary per product — our team will advise you at the point of purchase.'],
+        ['q' => 'How do I place an order?', 'a' => 'You can place an order in three ways: In-store — visit any of our branches during operating hours Facebook — message us on our official Facebook page Phone/Chat — contact the nearest branch directly through our locations page'],
+        ['q' => 'Do you offer delivery services?', 'a' => 'Yes, we offer delivery services through Lalamove . Delivery availability depends on your location and the branch nearest to you. Please contact your preferred branch to confirm delivery coverage and rates for your area. Please note: The shipping fee is shouldered by the buyer.'],
+        ['q' => 'What payment methods do you accept?', 'a' => 'We accept cash and bank transfer. Please confirm with your branch for the most up-to-date payment options.'],
+        ['q' => 'What are your branch operating hours?', 'a' => 'Our Pulilan Branch is open Monday – Sunday . All other branches operate Monday – Saturday . For specific opening and closing times, please contact the branch directly through our locations page .'],
+        ['q' => 'What should I do if I receive a damaged product?', 'a' => 'If you receive a damaged or defective product, please contact us immediately — ideally within 24–48 hours of receipt. Take photos of the damage and reach out to the branch where you made your purchase. We will assess the situation and arrange for a replacement or resolution as quickly as possible. Please note: Damage may sometimes occur during delivery via Lalamove. In such cases, the buyer must coordinate directly with Lalamove first before we can process any resolution.'],
+        ['q' => 'Can I return or exchange a product?', 'a' => 'Returns and exchanges are handled on a case-by-case basis. Products must be unused, in their original condition, and accompanied by proof of purchase. Custom or special orders may not be returnable. Please contact the branch where you purchased the product to initiate the process.'],
+        ['q' => 'How do I properly maintain and clean your products?', 'a' => 'Most of our products require minimal maintenance. General care tips: Wipe with a soft, damp cloth for routine cleaning Avoid harsh chemicals or abrasive scrubbers For outdoor products, periodic cleaning to remove dirt and debris is recommended Inspect and re-tighten any fasteners annually for structural pieces Product-specific maintenance guides are available from our staff at purchase.'],
+    ];
+    ?>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+<?php foreach ($faqSchema as $_i => $_f): ?>
+        {
+          "@type": "Question",
+          "name": <?= json_encode($_f['q'], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?>,
+          "acceptedAnswer": { "@type": "Answer", "text": <?= json_encode($_f['a'], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?> }
+        }<?= $_i < count($faqSchema) - 1 ? ',' : '' ?>
+<?php endforeach; ?>
+      ]
+    }
+    </script>
 
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
