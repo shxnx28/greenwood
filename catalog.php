@@ -644,6 +644,10 @@ foreach ($products_grouped as $pid => $p) {
             </div>
 
             <!-- Products Grid -->
+            <!-- No-JS fallback: reveal the server-rendered grid + hide the loading spinner -->
+            <noscript>
+                <style>#productsGrid{opacity:1 !important;} #productsLoadingOverlay{display:none !important;}</style>
+            </noscript>
             <div class="products-loading" style="position: relative;">
                 <div class="products-loading-overlay" id="productsLoadingOverlay">
                     <img loading="lazy" decoding="async" src="assets/images/nobg.webp" alt="Greenwood Logo" class="loading-logo">
