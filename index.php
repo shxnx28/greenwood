@@ -308,7 +308,7 @@ main{display:block;min-height:100vh}
             <p class="lead text-muted">Premium quality materials for modern Filipino homes</p>
         </div>
         <div class="product-grid">
-            <a href="/catalog.php?category=wall" class="location-link" data-aos="fade-up" data-aos-delay="100">
+            <a href="/catalog/wall" class="location-link" data-aos="fade-up" data-aos-delay="100">
                 <div class="product-card" data-category="wall">
                     <div class="product-image wall-img">
                         <span class="product-badge">Wall Solutions</span>
@@ -320,7 +320,7 @@ main{display:block;min-height:100vh}
                     </div>
                 </div>
             </a>
-            <a href="/catalog.php?category=floor" class="location-link" data-aos="fade-up" data-aos-delay="200">
+            <a href="/catalog/floor" class="location-link" data-aos="fade-up" data-aos-delay="200">
                 <div class="product-card" data-category="floor">
                     <div class="product-image floor-img">
                         <span class="product-badge">Floor Solutions</span>
@@ -332,7 +332,7 @@ main{display:block;min-height:100vh}
                     </div>
                 </div>
             </a>
-            <a href="/catalog.php?category=ceiling" class="location-link" data-aos="fade-up" data-aos-delay="300">
+            <a href="/catalog/ceiling" class="location-link" data-aos="fade-up" data-aos-delay="300">
                 <div class="product-card" data-category="ceiling">
                     <div class="product-image ceiling-img">
                         <span class="product-badge">Ceiling Solutions</span>
@@ -344,7 +344,7 @@ main{display:block;min-height:100vh}
                     </div>
                 </div>
             </a>
-            <a href="/catalog.php?category=fence" class="location-link" data-aos="fade-up" data-aos-delay="400">
+            <a href="/catalog/fence" class="location-link" data-aos="fade-up" data-aos-delay="400">
                 <div class="product-card" data-category="fence">
                     <div class="product-image fence-img">
                         <span class="product-badge">Fence Solutions</span>
@@ -356,7 +356,7 @@ main{display:block;min-height:100vh}
                     </div>
                 </div>
             </a>
-            <a href="/catalog.php?category=adhesive" class="location-link" data-aos="fade-up" data-aos-delay="500">
+            <a href="/catalog/adhesive" class="location-link" data-aos="fade-up" data-aos-delay="500">
                 <div class="product-card" data-category="adhesive">
                     <div class="product-image adhesive-img">
                         <span class="product-badge">Adhesive Solutions</span>

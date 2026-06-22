@@ -43,10 +43,10 @@
             <div class="col-lg-4 col-md-6">
                 <h5 class="footer-title mb-3">Products</h5>
                 <ul class="footer-links list-unstyled">
-                    <li><a href="/catalog.php?category=wall" class="text-decoration-none">Wall Solutions</a></li>
-                    <li><a href="/catalog.php?category=floor" class="text-decoration-none">Floor Solutions</a></li>
-                    <li><a href="/catalog.php?category=ceiling" class="text-decoration-none">Ceiling Solutions</a></li>
-                    <li><a href="/catalog.php?category=fence" class="text-decoration-none">Fence Solutions</a></li>
+                    <li><a href="/catalog/wall" class="text-decoration-none">Wall Solutions</a></li>
+                    <li><a href="/catalog/floor" class="text-decoration-none">Floor Solutions</a></li>
+                    <li><a href="/catalog/ceiling" class="text-decoration-none">Ceiling Solutions</a></li>
+                    <li><a href="/catalog/fence" class="text-decoration-none">Fence Solutions</a></li>
                     <li><a href="/catalog.php" class="text-decoration-none">View All Products</a></li>
                     <li><a href="/projects.php" class="text-decoration-none">Our Projects</a></li>
                     <li><a href="/sitemap.php" class="text-decoration-none" rel="nofollow">Sitemap</a></li>

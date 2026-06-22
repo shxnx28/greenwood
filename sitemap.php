@@ -65,28 +65,35 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
     </url>
 
     <url>
-        <loc><?php echo $base; ?>/catalog.php?category=wall</loc>
+        <loc><?php echo $base; ?>/catalog/wall</loc>
         <lastmod><?php echo $productLastMod; ?></lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
 
     <url>
-        <loc><?php echo $base; ?>/catalog.php?category=floor</loc>
+        <loc><?php echo $base; ?>/catalog/floor</loc>
         <lastmod><?php echo $productLastMod; ?></lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
 
     <url>
-        <loc><?php echo $base; ?>/catalog.php?category=ceiling</loc>
+        <loc><?php echo $base; ?>/catalog/ceiling</loc>
         <lastmod><?php echo $productLastMod; ?></lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
 
     <url>
-        <loc><?php echo $base; ?>/catalog.php?category=fence</loc>
+        <loc><?php echo $base; ?>/catalog/fence</loc>
+        <lastmod><?php echo $productLastMod; ?></lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <url>
+        <loc><?php echo $base; ?>/catalog/adhesive</loc>
         <lastmod><?php echo $productLastMod; ?></lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
@@ -138,7 +145,7 @@ $sql = "SELECT p.product_id, p.product_name, p.image_path,
 $result = $conn->query($sql);
 if ($result) {
     while ($row = $result->fetch_assoc()) {
-        $url      = $base . '/product-detail.php?id=' . intval($row['product_id']);
+        $url      = $base . gw_product_url($row['product_id'], $row['product_name']);
         $lastmod  = $row['lastmod'] ?: $today;
         $imgUrl   = !empty($row['image_path'])
                     ? $base . '/admin/' . ltrim($row['image_path'], '/')
