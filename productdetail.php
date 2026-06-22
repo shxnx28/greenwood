@@ -245,6 +245,22 @@ foreach ($variants as $variant) {
       }
     }
     </script>
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://greenwoodphilippines.com/" },
+<?php if (!empty($product['category_name'])): ?>
+        { "@type": "ListItem", "position": 2, "name": "<?php echo $seoCategory; ?>", "item": "https://greenwoodphilippines.com/catalog.php?category=<?php echo urlencode(strtolower($product['category_name'])); ?>" },
+        { "@type": "ListItem", "position": 3, "name": "<?php echo $seoProductName; ?>", "item": "<?php echo $canonicalUrl; ?>" }
+<?php else: ?>
+        { "@type": "ListItem", "position": 2, "name": "<?php echo $seoProductName; ?>", "item": "<?php echo $canonicalUrl; ?>" }
+<?php endif; ?>
+      ]
+    }
+    </script>
     <link rel="icon" type="image/png" href="/assets/images/gw.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">

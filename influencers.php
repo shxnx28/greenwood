@@ -11,7 +11,7 @@
     $pageTitle = 'Our Influencers';
     ?>
 
-    <title>Our Influencers | Greenwood Philippines – Community & Content Creators</title>
+    <title>Influencer Reviews | Greenwood Philippines</title>
 
     <!-- Primary SEO Meta Tags -->
     <meta name="description" content="Meet the influencers and content creators who trust and feature Greenwood Philippines products. See their reactions and honest reviews of our wall panels, flooring, and more.">
