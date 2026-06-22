@@ -21,7 +21,7 @@
         <div class="row g-4">
             <!-- Company Info -->
             <div class="col-lg-5 col-md-12">
-                <h3 class="footer-title" mb-3">GREENWOOD PHILIPPINES</h3>
+                <h3 class="footer-title mb-3">GREENWOOD PHILIPPINES</h3>
                 <p class="footer-text text-white-50">
                     The #1 supplier of modern wall, floor, and ceiling solutions for Filipino homes and contractors. 
                     Building better spaces, one project at a time.
@@ -29,7 +29,7 @@
             </div>
             <!-- Quick Links -->
             <div class="col-lg-3 col-md-6">
-                <h5 class="footer-title" mb-3">Quick Links</h5>
+                <h5 class="footer-title mb-3">Quick Links</h5>
                 <ul class="footer-links list-unstyled">
                     <li><a href="/#home" class="text-decoration-none">Home</a></li>
                     <li><a href="/#products" class="text-decoration-none">Products</a></li>
@@ -41,7 +41,7 @@
             </div>
             <!-- Product Links -->
             <div class="col-lg-4 col-md-6">
-                <h5 class="footer-title" mb-3">Products</h5>
+                <h5 class="footer-title mb-3">Products</h5>
                 <ul class="footer-links list-unstyled">
                     <li><a href="/catalog.php?category=wall" class="text-decoration-none">Wall Solutions</a></li>
                     <li><a href="/catalog.php?category=floor" class="text-decoration-none">Floor Solutions</a></li>
