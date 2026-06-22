@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" aria-label="Greenwood Philippines main navigation">
+<nav class="navbar navbar-expand-xl fixed-top navbar-transparent" aria-label="Greenwood Philippines main navigation">
     <div class="container">
         <a class="navbar-brand" href="/" aria-label="Greenwood Philippines – Home">
             <div class="brand-logo">
