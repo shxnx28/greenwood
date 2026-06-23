@@ -919,13 +919,17 @@ I would like to inquire about availability and pricing.`;
                 <div class="gw-tut-gif-item">
                     <p class="gw-tut-gif-caption">Desktop</p>
                     <div class="gw-tut-gif-box">
-                        <img src="/assets/images/inquire-guide-desktop.gif" alt="Desktop paste tutorial" class="gw-tut-gif" onerror="this.closest('.gw-tut-gif-item').style.display='none'"/>
+                        <video class="gw-tut-gif" autoplay loop muted playsinline preload="none" aria-label="Desktop paste tutorial" onerror="this.closest('.gw-tut-gif-item').style.display='none'">
+                            <source src="/assets/videos/inquire-guide-desktop.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
                 <div class="gw-tut-gif-item">
                     <p class="gw-tut-gif-caption">Mobile</p>
                     <div class="gw-tut-gif-box">
-                        <img src="/assets/images/inquire-guide-mobile.gif" alt="Mobile paste tutorial" class="gw-tut-gif" onerror="this.closest('.gw-tut-gif-item').style.display='none'"/>
+                        <video class="gw-tut-gif" autoplay loop muted playsinline preload="none" aria-label="Mobile paste tutorial" onerror="this.closest('.gw-tut-gif-item').style.display='none'">
+                            <source src="/assets/videos/inquire-guide-mobile.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </div>

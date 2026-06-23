@@ -501,9 +501,10 @@ if (!$albumExists) {
                        data-aos=\"zoom-in\" 
                        data-aos-delay=\"{$delay}\">
 
-                        <img src=\"{$imagePath}\" 
-                             alt=\"{$title}\" 
-                             loading=\"lazy\">
+                        <img src=\"{$imagePath}\"
+                             alt=\"{$title}\"
+                             loading=\"lazy\"
+                             onerror=\"this.onerror=null;this.src='/assets/images/nobg.webp';\">
 
                         <div class=\"gallery-item-overlay\">
                             <h6 class=\"mb-0\">{$title}</h6>";

@@ -499,9 +499,10 @@
                            data-aos=\"zoom-in\" 
                            data-aos-delay=\"{$delay}\">
 
-                            <img src=\"{$imagePath}\" 
-                                 alt=\"{$albumTitle}\" 
-                                 loading=\"lazy\">
+                            <img src=\"{$imagePath}\"
+                                 alt=\"{$albumTitle}\"
+                                 loading=\"lazy\"
+                                 onerror=\"this.onerror=null;this.src='/assets/images/nobg.webp';\">
 
                             <div class=\"image-count\">
                                 <i class=\"bi bi-images\"></i>

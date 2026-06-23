@@ -411,7 +411,7 @@
                     <!-- Photo -->
                     <div class="inf-image-wrapper <?php echo empty($photoPath) ? 'placeholder-image' : ''; ?>">
                         <?php if (!empty($photoPath)): ?>
-                            <img src="<?php echo $photoPath; ?>" alt="<?php echo $name; ?>" loading="lazy" class="inf-image">
+                            <img src="<?php echo $photoPath; ?>" alt="<?php echo $name; ?>" loading="lazy" class="inf-image" onerror="this.onerror=null;this.src='/assets/images/nobg.webp';">
                         <?php endif; ?>
 
                         <!-- Hover overlay -->

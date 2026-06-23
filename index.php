@@ -458,7 +458,7 @@ main{display:block;min-height:100vh}
                                                     <div class="hover-text">View Album</div>
                                                 </div>
                                                 <div class="product-image-wrapper">
-                                                    <img src="<?php echo $imagePath; ?>" alt="<?php echo $title; ?>" loading="lazy" decoding="async" class="product-image" onerror="this.parentElement.classList.add('placeholder-image'); this.style.display='none';">
+                                                    <img src="<?php echo $imagePath; ?>" alt="<?php echo $title; ?>" loading="lazy" decoding="async" class="product-image" onerror="this.onerror=null;this.src='/assets/images/nobg.webp';">
                                                 </div>
                                                 <div class="product-info">
                                                     <div class="product-header-section">
@@ -567,7 +567,7 @@ main{display:block;min-height:100vh}
                                                          alt="<?php echo htmlspecialchars($inf['name']); ?>"
                                                          class="product-image"
                                                          loading="lazy" decoding="async"
-                                                         onerror="this.parentElement.classList.add('placeholder-image'); this.style.display='none';">
+                                                         onerror="this.onerror=null;this.src='/assets/images/nobg.webp';">
                                                 </div>
                                                 <div class="product-info">
                                                     <h5 class="product-title"><?php echo htmlspecialchars($inf['name']); ?></h5>
@@ -670,24 +670,23 @@ main{display:block;min-height:100vh}
             </div>
 
             <?php
-            $sql = "SELECT * FROM warehouse_location WHERE is_active = 1 ORDER BY display_order ASC, location_id ASC";
-            $result = $conn->query($sql);
             $locations = [];
+            $result = $conn->query("SELECT * FROM warehouse_location WHERE is_active = 1 ORDER BY display_order ASC, location_id ASC");
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    $locationId = $row['location_id'];
-                    $contactsSql = "SELECT * FROM branch_contacts WHERE location_id = ? AND is_active = 1 ORDER BY is_primary DESC, display_order ASC";
-                    $contactsStmt = $conn->prepare($contactsSql);
-                    $contactsStmt->bind_param("i", $locationId);
-                    $contactsStmt->execute();
-                    $contactsResult = $contactsStmt->get_result();
                     $row['contacts'] = [];
-                    while ($contact = $contactsResult->fetch_assoc()) {
-                        $row['contacts'][] = $contact;
-                    }
-                    $contactsStmt->close();
-                    $locations[] = $row;
+                    $locations[$row['location_id']] = $row;
                 }
+            }
+            if (!empty($locations)) {
+                $ids = implode(',', array_map('intval', array_keys($locations)));
+                $cResult = $conn->query("SELECT * FROM branch_contacts WHERE location_id IN ($ids) AND is_active = 1 ORDER BY location_id ASC, is_primary DESC, display_order ASC");
+                if ($cResult) {
+                    while ($contact = $cResult->fetch_assoc()) {
+                        $locations[$contact['location_id']]['contacts'][] = $contact;
+                    }
+                }
+                $locations = array_values($locations);
             }
             ?>
 
