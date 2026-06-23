@@ -458,7 +458,7 @@ main{display:block;min-height:100vh}
                                                     <div class="hover-text">View Album</div>
                                                 </div>
                                                 <div class="product-image-wrapper">
-                                                    <img src="<?php echo $imagePath; ?>" alt="<?php echo $title; ?>" loading="lazy" decoding="async" class="product-image" onerror="this.parentElement.classList.add('placeholder-image'); this.style.display='none';">
+                                                    <img src="<?php echo $imagePath; ?>" alt="<?php echo $title; ?>" loading="lazy" decoding="async" class="product-image" onerror="this.onerror=null;this.src='/assets/images/nobg.webp';">
                                                 </div>
                                                 <div class="product-info">
                                                     <div class="product-header-section">
@@ -567,7 +567,7 @@ main{display:block;min-height:100vh}
                                                          alt="<?php echo htmlspecialchars($inf['name']); ?>"
                                                          class="product-image"
                                                          loading="lazy" decoding="async"
-                                                         onerror="this.parentElement.classList.add('placeholder-image'); this.style.display='none';">
+                                                         onerror="this.onerror=null;this.src='/assets/images/nobg.webp';">
                                                 </div>
                                                 <div class="product-info">
                                                     <h5 class="product-title"><?php echo htmlspecialchars($inf['name']); ?></h5>
