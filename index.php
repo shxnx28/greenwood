@@ -670,24 +670,23 @@ main{display:block;min-height:100vh}
             </div>
 
             <?php
-            $sql = "SELECT * FROM warehouse_location WHERE is_active = 1 ORDER BY display_order ASC, location_id ASC";
-            $result = $conn->query($sql);
             $locations = [];
+            $result = $conn->query("SELECT * FROM warehouse_location WHERE is_active = 1 ORDER BY display_order ASC, location_id ASC");
             if ($result && $result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    $locationId = $row['location_id'];
-                    $contactsSql = "SELECT * FROM branch_contacts WHERE location_id = ? AND is_active = 1 ORDER BY is_primary DESC, display_order ASC";
-                    $contactsStmt = $conn->prepare($contactsSql);
-                    $contactsStmt->bind_param("i", $locationId);
-                    $contactsStmt->execute();
-                    $contactsResult = $contactsStmt->get_result();
                     $row['contacts'] = [];
-                    while ($contact = $contactsResult->fetch_assoc()) {
-                        $row['contacts'][] = $contact;
-                    }
-                    $contactsStmt->close();
-                    $locations[] = $row;
+                    $locations[$row['location_id']] = $row;
                 }
+            }
+            if (!empty($locations)) {
+                $ids = implode(',', array_map('intval', array_keys($locations)));
+                $cResult = $conn->query("SELECT * FROM branch_contacts WHERE location_id IN ($ids) AND is_active = 1 ORDER BY location_id ASC, is_primary DESC, display_order ASC");
+                if ($cResult) {
+                    while ($contact = $cResult->fetch_assoc()) {
+                        $locations[$contact['location_id']]['contacts'][] = $contact;
+                    }
+                }
+                $locations = array_values($locations);
             }
             ?>
 
