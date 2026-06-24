@@ -36,8 +36,8 @@ if ($_r) $_upcoming_count = (int)$_r->fetch_assoc()['c'];
     <link rel="preload" href="/assets/images/livingroom-m.webp" as="image" media="(max-width: 991px)" fetchpriority="high">
     <link rel="preload" href="/assets/images/livingroom.webp" as="image" media="(min-width: 992px)" fetchpriority="high">
     <!-- AOS CSS loaded async to avoid render blocking -->
-    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+    <link rel="preload" href="/css/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/aos.css"></noscript>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wall, Floor & Ceiling Materials | Greenwood Philippines</title>
 
@@ -869,7 +869,7 @@ main{display:block;min-height:100vh}
     <?php include 'footer.php'; ?>
 
     <script src="/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="/js/aos.js" defer></script>
     <script src="/js/script.js" defer></script>
 
     <?php if (!empty($_ann_rows)): ?>
