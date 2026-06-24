@@ -1,0 +1,28 @@
+@font-face{font-family:"bootstrap-icons";font-display:swap;src:url("/assets/fonts/bootstrap-icons.woff2") format("woff2")}
+.bi::before,[class^="bi-"]::before,[class*=" bi-"]::before{display:inline-block;font-family:"bootstrap-icons"!important;font-style:normal;font-weight:normal!important;font-variant:normal;text-transform:none;line-height:1;vertical-align:-.125em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.bi-arrow-left::before{content:"\f12f"}
+.bi-box::before{content:"\f1c8"}
+.bi-calendar::before{content:"\f1f6"}
+.bi-check-circle-fill::before{content:"\f26a"}
+.bi-clipboard::before{content:"\f290"}
+.bi-envelope-fill::before{content:"\f32c"}
+.bi-facebook::before{content:"\f344"}
+.bi-folder::before{content:"\f3d7"}
+.bi-folder-x::before{content:"\f3d6"}
+.bi-geo-alt::before{content:"\f3e8"}
+.bi-globe::before{content:"\f3ee"}
+.bi-grid::before{content:"\f3fc"}
+.bi-image::before{content:"\f42a"}
+.bi-images::before{content:"\f42b"}
+.bi-instagram::before{content:"\f437"}
+.bi-people::before{content:"\f4d0"}
+.bi-people-fill::before{content:"\f4cf"}
+.bi-person-circle::before{content:"\f4d7"}
+.bi-person-fill::before{content:"\f4da"}
+.bi-play-circle::before{content:"\f4f3"}
+.bi-play-circle-fill::before{content:"\f4f2"}
+.bi-tag::before{content:"\f5b0"}
+.bi-telephone-fill::before{content:"\f5b4"}
+.bi-tiktok::before{content:"\f6cc"}
+.bi-twitter-x::before{content:"\f8db"}
+.bi-youtube::before{content:"\f62b"}

@@ -1,0 +1,42 @@
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:swap;src:url("/assets/fonts/fa-solid-900.woff2") format("woff2")}
+@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fonts/fa-brands-400.woff2") format("woff2")}
+.fa,.fas,.fa-solid,.fab,.fa-brands{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
+.fas,.fa-solid{font-family:"Font Awesome 6 Free";font-weight:900}
+.fab,.fa-brands{font-family:"Font Awesome 6 Brands";font-weight:400}
+.fa-fw{text-align:center;width:1.25em}
+.fa-spin{animation:fa-spin 2s linear infinite}
+@keyframes fa-spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+.fa-arrow-left::before{content:"\f060"}
+.fa-arrow-right::before{content:"\f061"}
+.fa-arrows-alt-h::before{content:"\f337"}
+.fa-arrows-alt-v::before{content:"\f338"}
+.fa-arrows-left-right::before{content:"\f07e"}
+.fa-check::before{content:"\f00c"}
+.fa-check-circle::before{content:"\f058"}
+.fa-chevron-up::before{content:"\f077"}
+.fa-copy::before{content:"\f0c5"}
+.fa-couch::before{content:"\f4b8"}
+.fa-crop-alt::before{content:"\f565"}
+.fa-download::before{content:"\f019"}
+.fa-expand-alt::before{content:"\f424"}
+.fa-facebook-messenger::before{content:"\f39f"}
+.fa-fill-drip::before{content:"\f576"}
+.fa-grip-lines::before{content:"\f7a4"}
+.fa-info-circle::before{content:"\f05a"}
+.fa-layer-group::before{content:"\f5fd"}
+.fa-list-check::before{content:"\f0ae"}
+.fa-location-dot::before{content:"\f3c5"}
+.fa-map-marker-alt::before{content:"\f3c5"}
+.fa-paste::before{content:"\f0ea"}
+.fa-redo::before{content:"\f01e"}
+.fa-rotate-right::before{content:"\f2f9"}
+.fa-save::before{content:"\f0c7"}
+.fa-search-minus::before{content:"\f010"}
+.fa-search-plus::before{content:"\f00e"}
+.fa-square::before{content:"\f0c8"}
+.fa-store::before{content:"\f54e"}
+.fa-swatchbook::before{content:"\f5c3"}
+.fa-times::before{content:"\f00d"}
+.fa-trash::before{content:"\f1f8"}
+.fa-trash-alt::before{content:"\f2ed"}
+.fa-undo::before{content:"\f0e2"}
