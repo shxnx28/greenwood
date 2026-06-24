@@ -150,8 +150,6 @@ foreach ($products_grouped as $pid => $p) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Building Materials Catalog | Greenwood Philippines</title>
     <meta name="description" content="Browse Greenwood Philippines' full catalog of premium wall panels, flooring, ceiling systems, and fence solutions. Filter by category, compare prices, and calculate area coverage.">
@@ -212,12 +210,12 @@ foreach ($products_grouped as $pid => $p) {
       ]
     }
     </script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
-    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/fontawesome.css">
+    <link rel="preload" href="/assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <style>@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('/assets/fonts/inter-variable.woff2') format('woff2')}</style>
+    <link rel="preload" href="/css/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/aos.css"></noscript>
     <link rel="icon" type="image/png" href="/assets/images/gw.png">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/catalog.css?v=2">
@@ -771,8 +769,8 @@ foreach ($products_grouped as $pid => $p) {
     </main><!-- /#main-content -->
     <?php include 'footer.php'; ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/aos.js"></script>
 
 <script>
     AOS.init({ duration: 800, once: true });

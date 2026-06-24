@@ -3,8 +3,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQs | Greenwood Philippines</title>
     <meta name="description" content="Frequently asked questions about Greenwood Philippines products, installation, delivery, and more.">
@@ -65,13 +63,13 @@
     }
     </script>
 
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
-    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+    <link rel="preload" href="/assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <style>@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('/assets/fonts/inter-variable.woff2') format('woff2')}</style>
+    <link rel="preload" href="/css/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/aos.css"></noscript>
     <link rel="icon" type="image/png" href="/assets/images/gw.png">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 
     <style>
@@ -1095,8 +1093,8 @@
 
 <?php include 'footer.php'; ?>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+<script src="/js/bootstrap.bundle.min.js" defer></script>
+<script src="/js/aos.js" defer></script>
 <script src="/js/script.js" defer></script>
 
 <script>

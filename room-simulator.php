@@ -110,8 +110,8 @@ sort($types);
 }
 </script>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/fontawesome.css">
 <link rel="stylesheet" href="/css/style.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}

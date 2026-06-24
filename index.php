@@ -28,7 +28,6 @@ if ($_r) $_upcoming_count = (int)$_r->fetch_assoc()['c'];
     <meta charset="UTF-8">
     <!-- Resource Hints for performance -->
     <!-- Inter is self-hosted (same-origin), so no Google Fonts preconnects are needed -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <!-- Preload critical above-fold assets -->
     <link rel="preload" href="/assets/images/nobg.webp" as="image" fetchpriority="high">
     <!-- Hero (LCP) image preloaded per-viewport: phones get a right-sized 39KB copy — the -->
@@ -37,8 +36,8 @@ if ($_r) $_upcoming_count = (int)$_r->fetch_assoc()['c'];
     <link rel="preload" href="/assets/images/livingroom-m.webp" as="image" media="(max-width: 991px)" fetchpriority="high">
     <link rel="preload" href="/assets/images/livingroom.webp" as="image" media="(min-width: 992px)" fetchpriority="high">
     <!-- AOS CSS loaded async to avoid render blocking -->
-    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+    <link rel="preload" href="/css/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/aos.css"></noscript>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wall, Floor & Ceiling Materials | Greenwood Philippines</title>
 
@@ -236,18 +235,10 @@ main{display:block;min-height:100vh}
     <!-- (no post-load recalc thrash).                                                       -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="/assets/images/gw.png">
-    <!-- Bootstrap Icons deferred (non-render-blocking) — icons are not above-fold critical -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"></noscript>
-    <!-- font-display:swap override for Bootstrap Icons to fix Lighthouse Font Display warning -->
-    <style>
-    @font-face {
-        font-family: "bootstrap-icons";
-        src: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/fonts/bootstrap-icons.woff2?1bb8886bab5f4ea4a2596dc1b9cf8ee1") format("woff2"),
-             url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/fonts/bootstrap-icons.woff?1bb8886bab5f4ea4a2596dc1b9cf8ee1") format("woff");
-        font-display: swap;
-    }
-    </style>
+    <!-- Bootstrap Icons: self-hosted subset of the 26 used glyphs (2.7KB woff2 + 1.4KB css) -->
+    <!-- replacing the 128KB jsdelivr font + 80KB css. Same icons, same codepoints, no UI change. -->
+    <link rel="preload" href="/css/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/bootstrap-icons.css"></noscript>
     <!-- Main stylesheet: preload + render-blocking (same as every other page on the site). -->
     <!-- Loading it async (preload + onload swap) made the browser first-paint the hero from -->
     <!-- the inline critical subset above, which omits the mobile hero rules (flex-end       -->
@@ -255,8 +246,8 @@ main{display:block;min-height:100vh}
     <!-- style.css then applied, the entire above-the-fold hero relaid-out — driving CLS to  -->
     <!-- ~0.9 and delaying LCP until the swap landed (~8s on Slow 4G). style.css is           -->
     <!-- same-origin, gzipped and already preloaded here, so blocking adds negligible FCP.    -->
-    <link rel="preload" href="/css/style.css?v=8" as="style">
-    <link rel="stylesheet" href="/css/style.css?v=8">
+    <link rel="preload" href="/css/style.css?v=9" as="style">
+    <link rel="stylesheet" href="/css/style.css?v=9">
     <?php include 'pixel.php'; ?>
 </head>
 <body>
@@ -878,7 +869,7 @@ main{display:block;min-height:100vh}
     <?php include 'footer.php'; ?>
 
     <script src="/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="/js/aos.js" defer></script>
     <script src="/js/script.js" defer></script>
 
     <?php if (!empty($_ann_rows)): ?>

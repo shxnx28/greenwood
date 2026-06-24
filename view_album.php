@@ -140,16 +140,16 @@ if (!$albumExists) {
     </script>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="/css/aos.css" rel="stylesheet">
     
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/bootstrap-icons.css">
     
     <!-- GLightbox CSS for image gallery -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <link rel="stylesheet" href="/css/glightbox.min.css">
 
 <link rel="icon" type="image/png" href="/assets/images/gw.png">
     
@@ -567,13 +567,13 @@ if (!$albumExists) {
     <?php $conn->close(); ?>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
     
     <!-- AOS Animation JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/aos.js"></script>
     
     <!-- GLightbox JS -->
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="/js/glightbox.min.js"></script>
     
     <!-- Custom JS -->
     <script src="/js/script.js"></script>
