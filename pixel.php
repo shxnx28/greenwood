@@ -97,19 +97,38 @@ JS;
      Managed via: pixel.php (single shared file)
      ═══════════════════════════════════════════════ -->
 <script>
+// Define the fbq stub immediately (no network) so all track() calls queue up.
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+n.queue=[]}(window, document);
 
     fbq('init', '1501970074846574');
     fbq('track', 'PageView');
 
     <?php if (!empty($extra_js)) echo $extra_js; ?>
+
+    // Defer the ~70KB fbevents.js off the critical path: load it on the first
+    // user interaction, with a 5s fallback so PageView still fires for bounced
+    // visits. Queued events flush automatically once it loads.
+    (function () {
+        var loaded = false;
+        function loadPixel() {
+            if (loaded) return; loaded = true;
+            var t = document.createElement('script'); t.async = true;
+            t.src = 'https://connect.facebook.net/en_US/fbevents.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(t, s);
+        }
+        var evts = ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'];
+        function onFirst() {
+            evts.forEach(function (e) { window.removeEventListener(e, onFirst); });
+            loadPixel();
+        }
+        evts.forEach(function (e) { window.addEventListener(e, onFirst, { passive: true }); });
+        setTimeout(loadPixel, 5000);
+    })();
 
 </script>
 <noscript>

@@ -255,8 +255,8 @@ main{display:block;min-height:100vh}
     <!-- style.css then applied, the entire above-the-fold hero relaid-out — driving CLS to  -->
     <!-- ~0.9 and delaying LCP until the swap landed (~8s on Slow 4G). style.css is           -->
     <!-- same-origin, gzipped and already preloaded here, so blocking adds negligible FCP.    -->
-    <link rel="preload" href="/css/style.css?v=8" as="style">
-    <link rel="stylesheet" href="/css/style.css?v=8">
+    <link rel="preload" href="/css/style.css?v=9" as="style">
+    <link rel="stylesheet" href="/css/style.css?v=9">
     <?php include 'pixel.php'; ?>
 </head>
 <body>
