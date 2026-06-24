@@ -28,7 +28,6 @@ if ($_r) $_upcoming_count = (int)$_r->fetch_assoc()['c'];
     <meta charset="UTF-8">
     <!-- Resource Hints for performance -->
     <!-- Inter is self-hosted (same-origin), so no Google Fonts preconnects are needed -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <!-- Preload critical above-fold assets -->
     <link rel="preload" href="/assets/images/nobg.webp" as="image" fetchpriority="high">
     <!-- Hero (LCP) image preloaded per-viewport: phones get a right-sized 39KB copy — the -->
@@ -236,18 +235,10 @@ main{display:block;min-height:100vh}
     <!-- (no post-load recalc thrash).                                                       -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="/assets/images/gw.png">
-    <!-- Bootstrap Icons deferred (non-render-blocking) — icons are not above-fold critical -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"></noscript>
-    <!-- font-display:swap override for Bootstrap Icons to fix Lighthouse Font Display warning -->
-    <style>
-    @font-face {
-        font-family: "bootstrap-icons";
-        src: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/fonts/bootstrap-icons.woff2?1bb8886bab5f4ea4a2596dc1b9cf8ee1") format("woff2"),
-             url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/fonts/bootstrap-icons.woff?1bb8886bab5f4ea4a2596dc1b9cf8ee1") format("woff");
-        font-display: swap;
-    }
-    </style>
+    <!-- Bootstrap Icons: self-hosted subset of the 26 used glyphs (2.7KB woff2 + 1.4KB css) -->
+    <!-- replacing the 128KB jsdelivr font + 80KB css. Same icons, same codepoints, no UI change. -->
+    <link rel="preload" href="/css/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/bootstrap-icons.css"></noscript>
     <!-- Main stylesheet: preload + render-blocking (same as every other page on the site). -->
     <!-- Loading it async (preload + onload swap) made the browser first-paint the hero from -->
     <!-- the inline critical subset above, which omits the mobile hero rules (flex-end       -->
