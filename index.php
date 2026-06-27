@@ -681,6 +681,58 @@ main{display:block;min-height:100vh}
             }
             ?>
 
+            <?php
+            // ── LocalBusiness schema per branch (local + AI SEO: powers "supplier near me" answers) ──
+            if (!empty($locations)) {
+                $_branch_nodes = [];
+                foreach ($locations as $_loc) {
+                    $_street = trim(implode(', ', array_filter([
+                        $_loc['address_line1'] ?? '', $_loc['address_line2'] ?? '', $_loc['address_line3'] ?? ''
+                    ])));
+                    $_phone = '';
+                    if (!empty($_loc['contacts'][0]['contact_number'])) {
+                        $_phone = $_loc['contacts'][0]['contact_number'];
+                    }
+                    $_addr = array_filter([
+                        '@type'           => 'PostalAddress',
+                        'streetAddress'   => $_street,
+                        'addressLocality' => $_loc['city'] ?: $_loc['location_name'],
+                        'addressRegion'   => $_loc['province'] ?? '',
+                        'postalCode'      => $_loc['postal_code'] ?? '',
+                        'addressCountry'  => 'PH',
+                    ], function ($v) { return $v !== '' && $v !== null; });
+                    $_node = [
+                        '@type' => 'HardwareStore',
+                        '@id'   => 'https://greenwoodphilippines.com/#branch-' . (int)$_loc['location_id'],
+                        'name'  => 'Greenwood Philippines - ' . $_loc['location_name'],
+                        'image' => 'https://greenwoodphilippines.com/assets/images/gw.png',
+                        'url'   => 'https://greenwoodphilippines.com/#locations',
+                        'parentOrganization' => [
+                            '@type' => 'Organization',
+                            'name'  => 'Greenwood Philippines',
+                            'url'   => 'https://greenwoodphilippines.com',
+                        ],
+                        'address'    => $_addr,
+                        'areaServed' => $_loc['province'] ?: ($_loc['city'] ?: 'Philippines'),
+                    ];
+                    if (!empty($_phone))               $_node['telephone'] = $_phone;
+                    if (!empty($_loc['facebook_url']))  $_node['sameAs']    = [$_loc['facebook_url']];
+                    if (!empty($_loc['latitude']) && !empty($_loc['longitude'])) {
+                        $_node['geo'] = [
+                            '@type'     => 'GeoCoordinates',
+                            'latitude'  => $_loc['latitude'],
+                            'longitude' => $_loc['longitude'],
+                        ];
+                    }
+                    $_branch_nodes[] = $_node;
+                }
+                echo '<script type="application/ld+json">'
+                   . json_encode(['@context' => 'https://schema.org', '@graph' => $_branch_nodes],
+                                  JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
+                   . '</script>';
+            }
+            ?>
+
             <div class="row g-4">
                 <?php
                 $delay = 0;

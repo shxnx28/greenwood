@@ -36,6 +36,29 @@ Disallow: /login.php
 Disallow: /db.php
 Crawl-delay: 3
 
+# ── AI / LLM CRAWLERS — explicitly welcomed for AI-search visibility ──
+# Named individually so they use THIS group (no Crawl-delay) instead of the
+# generic "*" group below. Keeps admin/sensitive paths off-limits.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+Disallow: /admin/
+Disallow: /login.php
+Disallow: /db.php
+Disallow: /*.sql
+Disallow: /*.log
+Disallow: /*.env
+Disallow: /*.bak
+
 # ── ALL OTHER LEGITIMATE CRAWLERS ─────────────────────────────
 User-agent: *
 Allow: /
